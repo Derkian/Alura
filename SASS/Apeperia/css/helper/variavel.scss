@@ -1,0 +1,11 @@
+$cor-padrao : darken(#c24e4b,20);
+$cor-auxiliar: lighten(#1e2c35,2);
+$corBranca : #FFF;
+
+$mq-mobile : "(max-width: 980px)";
+
+$font-padrao : 16px;
+
+@function multiplica-por-fonte-padrao($multiplicador){
+    @return round($font-padrao * $multiplicador); 
+}
