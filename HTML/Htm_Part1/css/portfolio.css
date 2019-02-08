@@ -1,0 +1,13 @@
+.trabalho-realizado{
+    width: 45%;
+    border: 8px solid #000;
+    background-color: #FAFFFC;
+    padding: 16px;
+    margin: 16px;
+    box-sizing: border-box;
+    float: left;
+}
+
+.trabalho-realizado img{
+    width: 95%;
+}
