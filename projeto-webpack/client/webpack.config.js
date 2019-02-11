@@ -3,8 +3,20 @@ const babiliPlugin = require('babili-webpack-plugin');
 const extractTextPlugin = require('extract-text-webpack-plugin');
 const optimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const webpack = require('webpack');
+const htmlWebPackPlugin = require('html-webpack-plugin');
 
 let plugins = [];
+
+plugins.push(new htmlWebPackPlugin({
+    hash: true,
+    minify: {
+        html5 : true,
+        collapseWhitespace : true,
+        removeComments : true
+    },
+    filename : "index.html",
+    template : path.resolve(__dirname, 'main.html')
+}));
 
 plugins.push(new extractTextPlugin('styles.css'));
 
@@ -18,7 +30,11 @@ plugins.push(new webpack.optimize.CommonsChunkPlugin({
     filename : 'vendor.bundle.js'
 }));
 
+let SERVICE_URL = JSON.stringify('http://localhost:3000');
+
 if (process.env.NODE_ENV == 'production'){
+
+    SERVICE_URL = JSON.stringify('http://endereco-da-sua-api');
     
     plugins.push(new webpack.optimize.ModuleConcatenationPlugin());
 
@@ -35,6 +51,10 @@ if (process.env.NODE_ENV == 'production'){
     }));
 }
 
+plugins.push(new webpack.DefinePlugin({
+    SERVICE_URL : SERVICE_URL
+}));
+
 module.exports = {
     entry : {
         app : './app-src/app.js',
@@ -42,8 +62,8 @@ module.exports = {
     },
     output : {
         filename : 'bundle.js',
-        path : path.resolve(__dirname, 'dist'),
-        publicPath : 'dist'
+        path : path.resolve(__dirname, 'dist')
+        // publicPath : 'dist'
     },
     module : {
         rules : [
