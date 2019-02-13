@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import Home from './Home';
 import AutorBox from './Autor';
+import LivroBox from './Livro';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -13,7 +14,7 @@ const Root = () => (
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/autor" component={AutorBox} />
-                <Route path="/livros" />
+                <Route path="/livros" component={LivroBox}/>
             </Switch>
         </App>
     </Router>
