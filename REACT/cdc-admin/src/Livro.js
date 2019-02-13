@@ -83,10 +83,10 @@ export class FormularioLivro extends Component {
                         nome="preco" 
                         value={this.state.preco} 
                         onChange={this.setPreco} />
-
+                   
                     <SelectCustomizado 
-                        id="autores"
-                        label="Autores"
+                        id="autor"
+                        label="Autor"
                         dados={
                             this.state.listaAutores.map( autor => {
                                 return { id : autor.id, value : autor.nome }

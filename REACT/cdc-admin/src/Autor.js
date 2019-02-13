@@ -128,7 +128,7 @@ class AutorBox extends Component{
             }
         })
         
-        PubSub.subscribe('atualiza-lista', (mensagem, novoItem) => {            
+        PubSub.subscribe('atualiza-lista', (mensagem, novoItem) => {                 
             this.setState( { lista : [...this.state.lista, novoItem]} );
         });        
     }  

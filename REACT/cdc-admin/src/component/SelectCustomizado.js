@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 export class SelectCustomizado extends Component {
 
@@ -33,6 +34,11 @@ export class SelectCustomizado extends Component {
         </div>
     )
   }
+}
+
+SelectCustomizado.propTypes = {
+    id : PropTypes.number,
+    label : PropTypes.string    
 }
 
 export default SelectCustomizado
