@@ -7,6 +7,9 @@
     "pubsub-js": "^1.5.3",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-router-native": "^4.3.0",
     "react-scripts": "2.1.5"
   },
   "scripts": {
