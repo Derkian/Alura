@@ -4,16 +4,16 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 import './css/reset.css';
 import './css/timeline.css';
 import './css/login.css';
-import App from './App';
 import Login from './componentes/Login';
 import * as serviceWorker from './serviceWorker';
-import Timeline from './componentes/Timeline';
+import Logout from './componentes/Logout';
+import App from './App';
 
-const PrivateRoute = ({ component: Component, ...rest }) => (
+const PrivateRoute = ({ component: Component, ...rest }) => (   
     <Route
       {...rest}
-      render={props =>
-        localStorage.getItem('auth-token') != null ? (
+      render={ props =>
+        localStorage.getItem('auth-token') != null ? (                        
           <Component {...props} />
         ) : (
           <Redirect
@@ -32,7 +32,8 @@ ReactDOM.render(
 <Router>
     <Switch>
         <Route exact path="/" component={Login} />
-        <PrivateRoute path="/timeline" component={Timeline} />        
+        <PrivateRoute path="/timeline/:login?" component={App} />        
+        <Route path="/logout" component={Logout} />     
     </Switch>
 </Router>
 , document.getElementById('root'));

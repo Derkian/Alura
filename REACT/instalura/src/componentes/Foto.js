@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class FotoAtualizacoes extends Component {
     render(){
@@ -22,11 +23,11 @@ class FotoInfo extends Component {
               {
                 this.props.foto.likers.map(liker => {
                   return (
-                    <a href="#top" key={liker.login}>
+                    <Link to={`/timeline/${liker.login}`} key={liker.login}>
                       {
                         liker.login
                       }
-                    </a>
+                    </Link>
                   );                  
                 })
               }
@@ -36,7 +37,7 @@ class FotoInfo extends Component {
               </div>
 
               <p className="foto-info-legenda">
-                <a className="foto-info-autor">autor </a>
+                <Link className="foto-info-autor" to={`/timeline/${this.props.foto.loginUsuario}`} >autor </Link>
                 {
                   this.props.foto.comentario
                 }
@@ -47,7 +48,7 @@ class FotoInfo extends Component {
                   this.props.foto.comentarios.map(comentario => {
                     return (
                       <li className="comentario" key={comentario.id}>
-                        <a className="foto-info-autor"> { comentario.login } </a>
+                        <Link key={comentario.id}  className="foto-info-autor" to={`/timeline/${comentario.login}`} > { comentario.login } </Link>
                          {
                            comentario.texto
                          }
@@ -68,11 +69,11 @@ class FotoHeader extends Component {
               <figure className="foto-usuario">
                 <img src={this.props.foto.urlPerfil} alt="foto do usuario"/>
                 <figcaption className="foto-usuario">
-                  <a href="#">
+                  <Link key={this.props.foto.id} to={`/timeline/${this.props.foto.loginUsuario}`}>
                     {
                       this.props.foto.loginUsuario
                     }
-                  </a>  
+                  </Link>  
                 </figcaption>
               </figure>
               <time className="foto-data">

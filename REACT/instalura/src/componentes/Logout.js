@@ -1,14 +1,14 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
+import { Redirect }  from 'react-router-dom';
 
 export class Logout extends Component {
   
   componentWillMount(){
-      localStorage.removeItem('auth-token');
-      
+      localStorage.removeItem('auth-token');      
   }
 
   render() {
-    return null;
+    return <Redirect to="/" />
   }
 }
 

@@ -4,8 +4,7 @@ import { Redirect }  from 'react-router-dom';
 export class Login extends Component {
 
   constructor(){
-    super();            
-    console.log((new URL(window.location)).searchParams.get('msg'));        
+    super();                
     this.state = { msg : (new URL(window.location)).searchParams.get('msg'), redirectToReferrer: false };
   }
 
@@ -38,8 +37,8 @@ export class Login extends Component {
       });
   }
 
-  render() {
-
+  render() {    
+    
     if (this.state.redirectToReferrer){
         return <Redirect to="/timeline" />
     }
