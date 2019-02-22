@@ -2,13 +2,40 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 class FotoAtualizacoes extends Component {
+
+    like = event => {
+      event.preventDefault();
+      this.props.like(this.props.foto.id);
+    }
+
+    comenta = event => {
+      event.preventDefault();
+      this.props.comenta(this.props.foto.id, this.comentario.value);
+      this.comentario.value = "";
+    }
+
     render(){
-        return (
+        return (          
             <section className="fotoAtualizacoes">
-              <a href="#top" className="fotoAtualizacoes-like">Likar</a>
-              <form className="fotoAtualizacoes-form">
-                <input type="text" placeholder="Adicione um comentário..." className="fotoAtualizacoes-form-campo"/>
-                <input type="submit" value="Comentar!" className="fotoAtualizacoes-form-submit"/>
+              <a href="#top" 
+                onClick={this.like} 
+                className={this.props.foto.likeada ? 'fotoAtualizacoes-like-ativo' : 'fotoAtualizacoes-like'}>Likar</a>
+
+              <form 
+                className="fotoAtualizacoes-form" 
+                onSubmit={this.comenta}>
+                
+                <input 
+                  type="text" 
+                  ref={input => this.comentario = input }  
+                  placeholder="Adicione um comentário..." 
+                  className="fotoAtualizacoes-form-campo"/>
+
+                <input 
+                  type="submit" 
+                  value="Comentar!" 
+                  className="fotoAtualizacoes-form-submit"/>
+              
               </form>
             </section>            
         );
@@ -93,7 +120,7 @@ export default class FotoItem extends Component {
             <FotoHeader {...this.props}/>
             <img alt="foto" className="foto-src" src={ this.props.foto.urlFoto }/>
             <FotoInfo {...this.props}/>
-            <FotoAtualizacoes/>
+            <FotoAtualizacoes {...this.props}/>
           </div>            
         );
     }
