@@ -48,8 +48,8 @@ export class Login extends Component {
         <h1 className="header-logo">Instalura</h1>
         <form onSubmit={this.envia} method="POST">
             <spa>{this.state.msg}</spa>
-            <input type="text" ref={ input => this.usuario = input }/>
-            <input type="password" ref = { input => this.senha = input }/>
+            <input type="text" ref={ input => this.usuario = input } value="alots"/>
+            <input type="password" ref = { input => this.senha = input } value="123456"/>
             <input type="submit" value="Login" />
         </form>
       </div>
