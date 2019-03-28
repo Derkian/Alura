@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Header from './componentes/Header';
 import Timeline from './componentes/Timeline';
+import TimelineStore from './logicas/TimelineStore';
+
+const timelineStore = new TimelineStore([]);
 
 class App extends Component {  
   
@@ -9,7 +12,7 @@ class App extends Component {
     <div id="root">
       <div className="main">
         <Header/>
-        <Timeline Login={this.props.match.params.login}/>
+        <Timeline Login={this.props.match.params.login} store={timelineStore}/>
       </div>
     </div>
     );
