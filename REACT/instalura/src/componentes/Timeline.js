@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FotoItem from './Foto';
+import TimelineApi  from '../logicas/TimelineApi';
 
 export default class Timeline extends Component {
 
@@ -19,17 +20,17 @@ export default class Timeline extends Component {
             urlPerfil = `https://instalura-api.herokuapp.com/api/public/fotos/${this.login}`;
         }
 
-        this.props.store.lista(urlPerfil);
+        this.props.store.dispatch(TimelineApi.lista(urlPerfil));
     }
 
     comenta = (fotoId, infoComentario) => {
         
-        this.props.store.comenta(fotoId,infoComentario);
+        this.props.store.dispatch(TimelineApi.comenta(fotoId, infoComentario));
     }
 
-    like = (fotoId) => {
+    like = (fotoId) => {        
 
-       this.props.store.like(fotoId);
+        this.props.store.dispatch(TimelineApi.like(fotoId));       
     }
 
 
@@ -39,7 +40,7 @@ export default class Timeline extends Component {
 
     componentWillMount(){
         this.props.store.subscribe(fotos => {
-            this.setState({fotos});
+            this.setState({fotos : this.props.store.getState()});            
         })
     }
 
