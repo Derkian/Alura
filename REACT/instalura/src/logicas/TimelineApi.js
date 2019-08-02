@@ -1,3 +1,5 @@
+import { listagem, comentario, like, notifica } from '../actions/actionCreator';
+
 export default class TimelineApi {
     
     static lista = urlPerfil => {
@@ -6,7 +8,7 @@ export default class TimelineApi {
             fetch(urlPerfil)
                 .then(response => response.json())
                 .then(fotos => {
-                    dispatch({type : 'LISTAGEM', fotos});
+                    dispatch(listagem(fotos));
                     return fotos;
                 })
         }
@@ -32,7 +34,7 @@ export default class TimelineApi {
                     }
                 })            
                 .then(novoComentario => {                    
-                    dispatch({type: 'COMENTARIO', fotoId, novoComentario})
+                    dispatch( comentario(fotoId, novoComentario) );
                     return novoComentario;
                 })
             }
@@ -50,8 +52,36 @@ export default class TimelineApi {
                     throw new Error('Não foi possível adicionar o like na foto');
                 }                
             }).then(liker => {                    
-                dispatch({type : 'LIKER', fotoId, liker});
+                dispatch( like ( fotoId, liker ) );                
             });    
         }
     }   
+
+    static pesquisa = login => {
+
+        return dispatch => {
+            fetch(`https://instalura-api.herokuapp.com/api/public/fotos/${login}`)
+                .then(response => {
+                    if (response.ok) {
+                    return response.json();
+                    } else {
+                    throw new Error('Não foi possível consultar o usuário');
+                    }
+                })
+                .then(fotos => {
+                    if (fotos.length === 0) {                    
+                        dispatch(notifica('usuário não encontrado'));
+                    }
+                    else{
+                        dispatch(notifica('usuário encontrado'));
+                    }
+
+                    dispatch(listagem(fotos));                
+                    return fotos
+                })
+                .catch(erro => {
+                    console.log(erro);
+                });
+            }
+        }
 }

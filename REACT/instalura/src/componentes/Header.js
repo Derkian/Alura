@@ -1,25 +1,22 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Pubsub from 'pubsub-js';
+import TimelineApi from '../logicas/TimelineApi';
 
-export default class Header extends Component {
-    
+export default class Header extends Component {    
+
+    constructor () {
+      super();
+      this.state = { msg : '' };
+    }  
+
     envia = event => {
       event.preventDefault();      
-      
-      fetch(`https://instalura-api.herokuapp.com/api/public/fotos/${this.pesquisa.value}`)
-      .then(response => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error('Não foi possível consultar o usuário');
-        }
-      })
-      .then(fotos => {
-        Pubsub.publish('atualiza-fotos', fotos);
-      })
-      .catch(erro => {
-        console.log(erro);
+      this.props.store.dispatch( TimelineApi.pesquisa(this.pesquisa.value) );
+    }
+
+    componentDidMount() {
+      this.props.store.subscribe( () => {
+        this.setState( { msg : this.props.store.getState().notificacao } );
       });
     }
     
