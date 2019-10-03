@@ -36,7 +36,8 @@ export class SigInComponent implements OnInit {
         this.authService
             .autenticate(userName, password)
             .subscribe( 
-                data => {                    
+                data => {     
+                    console.log(data);
                     this.route.navigate(['user', userName]);
                 },
                 error => {
