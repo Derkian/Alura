@@ -1,17 +1,27 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ToolbarModule } from './toolbar/toolbar.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { MaterialModule } from './material.module';
+
+import { ToolbarComponent } from './toolbar/toolbar.component';
+import { SlideBarComponent } from './slide-bar/slide-bar.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ToolbarComponent,
+    SlideBarComponent
+  ],
   imports: [
-    CommonModule,
-    ToolbarModule    
+    CommonModule,     
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports : [
-    ToolbarModule
+    ToolbarComponent,
+    SlideBarComponent
   ]
 })
 
