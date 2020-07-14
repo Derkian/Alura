@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { ToolbarModule } from './components/toolbar/toolbar.module';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { ToolbarModule } from './components/toolbar/toolbar.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,        
-    ToolbarModule
+    ComponentsModule
   ],
   providers: [],  
   bootstrap: [AppComponent]
