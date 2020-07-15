@@ -1,45 +1,28 @@
 <ng-container>
   
   <!-- TOOL BAR  -->
-  <app-toolbar (toggled) = "onToggle()"></app-toolbar>
+  <app-toolbar (toggled) = "leftSidenav.toggle();"></app-toolbar>
 
   <mat-sidenav-container 
       class="example-container">
 
     <mat-sidenav 
         #leftSidenav mode="side" opened 
-        class="example-sidenav"
-        [fixedInViewport]="options.value.fixed" 
-        [fixedTopGap]="options.value.top"
-        [fixedBottomGap]="options.value.bottom">
+        class="example-sidenav">
      
         <app-left-side-bar></app-left-side-bar>
 
     </mat-sidenav>
 
-    <mat-sidenav-content class="sidenav-content" [formGroup]="options" [@onMainContentChange]="onSideNavChange ? 'open': 'close'">      
-        <p>
-          <mat-checkbox formControlName="fixed">Fixed</mat-checkbox>
-        </p>
-      
-        <p>
-          <mat-form-field>        
-            <mat-label>Top gap</mat-label>
-        
-            <input matInput type="number" formControlName="top">
-      
-          </mat-form-field>
-        </p>
-        
-        <p>        
-          <mat-form-field>
-            <mat-label>Bottom gap</mat-label>        
-            <input matInput type="number" formControlName="bottom">
-      
-          </mat-form-field>
-        </p>
-        
+    <mat-sidenav-content 
+      class="sidenav-content" 
+      [formGroup]="options" 
+      [@onMainContentChange]="onSideNavChange ? 'open': 'close'">      
+        <!-- CONTEUDO -->
+        <!-- <router-outlet></router-outlet> -->
+
     </mat-sidenav-content>
+
   </mat-sidenav-container>
 
   <!-- rodapé  -->
