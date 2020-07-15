@@ -7,6 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ComponentsModule } from './components/components.module';
 
+import { SidenavService } from './services/sidenav.service';
+
 @NgModule({
   declarations: [
     AppComponent,            
@@ -17,7 +19,7 @@ import { ComponentsModule } from './components/components.module';
     BrowserAnimationsModule,        
     ComponentsModule    
   ],
-  providers: [],  
+  providers: [ SidenavService ],  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

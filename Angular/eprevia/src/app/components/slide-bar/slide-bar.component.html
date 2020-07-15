@@ -1,22 +1,23 @@
 <ng-container>
   
   <!-- TOOL BAR  -->
-  <app-toolbar></app-toolbar>
+  <app-toolbar (toggled) = "onToggle()"></app-toolbar>
 
   <mat-sidenav-container 
       class="example-container">
 
     <mat-sidenav 
-        #sidenav mode="side" opened 
+        #leftSidenav mode="side" opened 
         class="example-sidenav"
         [fixedInViewport]="options.value.fixed" 
         [fixedTopGap]="options.value.top"
         [fixedBottomGap]="options.value.bottom">
      
-        {{options.value.fixed ? 'Fixed' : 'Non-fixed'}} Sidenav
+        <app-left-side-bar></app-left-side-bar>
+
     </mat-sidenav>
 
-    <mat-sidenav-content [formGroup]="options">      
+    <mat-sidenav-content class="sidenav-content" [formGroup]="options" [@onMainContentChange]="onSideNavChange ? 'open': 'close'">      
         <p>
           <mat-checkbox formControlName="fixed">Fixed</mat-checkbox>
         </p>
@@ -38,9 +39,6 @@
           </mat-form-field>
         </p>
         
-        <p>
-          <button mat-button (click)="sidenav.toggle()">Toggle</button>
-        </p>
     </mat-sidenav-content>
   </mat-sidenav-container>
 
