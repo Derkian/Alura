@@ -4,16 +4,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { MaterialModule } from './material.module';
 
-import { ToolbarComponent } from './toolbar/toolbar.component';
-import { SlideBarComponent } from './slide-bar/slide-bar.component';
-import { LeftSideBarComponent } from './left-side-bar/left-side-bar.component';
+import { LeftSideBarComponent } from './material/left-side-bar/left-side-bar.component';
+import { HeaderComponent } from './core/header/header.component';
+import { MainComponent } from './core/main/main.component';
+import { FooterComponent } from './core/footer/footer.component';
 
 
 @NgModule({
   declarations: [
-    ToolbarComponent,
-    SlideBarComponent,
-    LeftSideBarComponent
+    LeftSideBarComponent,
+    HeaderComponent,
+    MainComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,     
@@ -21,9 +23,8 @@ import { LeftSideBarComponent } from './left-side-bar/left-side-bar.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  exports : [
-    ToolbarComponent,
-    SlideBarComponent
+  exports : [    
+    MainComponent,
   ]
 })
 
