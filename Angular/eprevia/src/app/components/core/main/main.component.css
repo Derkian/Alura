@@ -1,9 +1,9 @@
 .example-container {
     position: absolute;
-    top: 60px;
-    bottom: 60px;
+    top: 60px;    
     left: 0;
     right: 0;    
+    height: calc(100vh - 60px);
   }
   
   .example-sidenav {
@@ -14,5 +14,25 @@
   }
   
   .sidenav-content{
-    padding: 1rem;
+    padding: 1rem;    
+  }
+  
+  .example-card {
+    max-width: 400px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+  .content-card {
+    margin: 0 .5em 0 .5em;
+    display: flex;
+    flex-direction: column;        
+    flex-wrap: wrap;
+  }
+
+  .example-spacer{
+    height: 1rem;
   }

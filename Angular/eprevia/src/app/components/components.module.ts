@@ -8,6 +8,8 @@ import { LeftSideBarComponent } from './material/left-side-bar/left-side-bar.com
 import { HeaderComponent } from './core/header/header.component';
 import { MainComponent } from './core/main/main.component';
 import { FooterComponent } from './core/footer/footer.component';
+import { CardComponent } from './material/card/card.component';
+import { ToolbarComponent } from './material/toolbar/toolbar.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { FooterComponent } from './core/footer/footer.component';
     LeftSideBarComponent,
     HeaderComponent,
     MainComponent,
-    FooterComponent
+    FooterComponent,
+    CardComponent,
+    ToolbarComponent
   ],
   imports: [
     CommonModule,     

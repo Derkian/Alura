@@ -19,12 +19,44 @@
         [@onMainContentChange]="onSideNavChange ? 'open': 'close'">      
           <!-- CONTEUDO -->
           <!-- <router-outlet></router-outlet> -->
-  
+          <div style="display: flex; flex-direction: row; justify-content: space-between;">
+
+            <div class="content-card">
+
+              <app-toolbar [title]="'Pendente'" [iconLeft]="'Name'"></app-toolbar>
+              
+              <app-card></app-card>
+              
+              <span class="example-spacer"></span>
+
+            </div>
+
+            <div class="content-card">
+
+              <app-toolbar [title]="'Em Andamento'" [iconLeft]="'shared'"></app-toolbar>
+
+              <app-card></app-card>
+
+              <span class="example-spacer"></span>
+
+              <app-card></app-card>
+
+
+            </div>
+
+            <div class="content-card">
+
+              <app-toolbar [title]="'Concluído'" [iconLeft]="'favorite'"></app-toolbar>
+
+              <app-card></app-card>
+
+
+            </div>
+
+          </div>
+          
       </mat-sidenav-content>
   
     </mat-sidenav-container>
-  
-    <!-- rodapé  -->
-    <app-footer></app-footer>
   
   </ng-container>
