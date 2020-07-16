@@ -19,11 +19,14 @@
         [@onMainContentChange]="onSideNavChange ? 'open': 'close'">      
           <!-- CONTEUDO -->
           <!-- <router-outlet></router-outlet> -->
-          <div style="display: flex; flex-direction: row; justify-content: space-between;">
+          <div fxLayout="row" fxLayout.xs="column">
 
             <div class="content-card">
 
-              <app-toolbar [title]="'Pendente'" [iconLeft]="'Name'"></app-toolbar>
+              <app-toolbar 
+                    [title]="'Pendente'" 
+                    [iconLeft]="'assignment'">
+              </app-toolbar>
               
               <app-card></app-card>
               
@@ -33,7 +36,10 @@
 
             <div class="content-card">
 
-              <app-toolbar [title]="'Em Andamento'" [iconLeft]="'shared'"></app-toolbar>
+              <app-toolbar 
+                    [title]="'Em Andamento'" 
+                    [iconLeft]="'hourglass_full'">
+              </app-toolbar>
 
               <app-card></app-card>
 
@@ -46,7 +52,10 @@
 
             <div class="content-card">
 
-              <app-toolbar [title]="'Concluído'" [iconLeft]="'favorite'"></app-toolbar>
+              <app-toolbar 
+                  [title]="'Concluído'" 
+                  [iconLeft]="'check_circle'">
+              </app-toolbar>
 
               <app-card></app-card>
 
