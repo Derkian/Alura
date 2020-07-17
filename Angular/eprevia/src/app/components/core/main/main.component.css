@@ -17,21 +17,3 @@
     padding: 1rem;    
     overflow: hidden;
   }
-    
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
-
-  .content-card {
-    margin: 0 .5em 0 .5em;    
-  }
-
-  .main-card{
-    overflow-y: scroll; 
-    height: calc(100vh - 156px);
-  }
-
-  .example-spacer{
-    height: 1em;
-  }

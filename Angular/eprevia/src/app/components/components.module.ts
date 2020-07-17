@@ -11,6 +11,7 @@ import { MainComponent } from './core/main/main.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { CardComponent } from './material/card/card.component';
 import { ToolbarComponent } from './material/toolbar/toolbar.component';
+import { DashboardComponent } from './core/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ToolbarComponent } from './material/toolbar/toolbar.component';
     MainComponent,
     FooterComponent,
     CardComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    DashboardComponent
   ],
   imports: [
     CommonModule,     

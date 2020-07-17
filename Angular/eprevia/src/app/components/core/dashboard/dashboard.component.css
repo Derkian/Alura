@@ -1,0 +1,8 @@
+.content-card {
+    margin: 0 .5em 0 .5em;    
+  }
+
+  .main-card{
+    overflow-y: scroll; 
+    height: calc(100vh - 156px);
+  }

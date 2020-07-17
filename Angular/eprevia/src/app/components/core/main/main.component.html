@@ -18,78 +18,8 @@
         class="sidenav-content"       
         [@onMainContentChange]="onSideNavChange ? 'open': 'close'">      
           <!-- CONTEUDO -->
-          <!-- <router-outlet></router-outlet> -->        
-
-          <div fxLayout="row" fxLayout.xs="column">
-            
-            <div class="content-card" fxLayout="column">
-
-              <app-toolbar 
-                    [title]="'Em Andamento'" 
-                    [iconLeft]="'query_builder'"
-                    [bgColor]="'#1dbd55'"
-                    [color]="'#fff'"
-                    [count]="141">
-              </app-toolbar>
-              
-              <div class="main-card">
-
-                <app-card></app-card>
-  
-                <app-card></app-card>
-  
-                <app-card></app-card>
-
-              </div>
-              
-
-            </div>
-
-            <div class="content-card" fxLayout="column">
-
-              <app-toolbar 
-                    [title]="'Concluído'" 
-                    [iconLeft]="'assignment_turned_in'"
-                    [bgColor]="'#d63461'"
-                    [color]="'#fff'"
-                    [count]="26">
-              </app-toolbar>
-
-              <div class="main-card">
-
-                <app-card></app-card>
-  
-                <app-card></app-card>
-  
-                <app-card></app-card>
-
-              </div>
-
-            </div>
-
-            <div class="content-card" fxLayout="column">
-
-              <app-toolbar 
-                  [title]="'Sincronizado'" 
-                  [iconLeft]="'autorenew'"
-                  [bgColor] = "'#5c67a5'"
-                  [color]="'#fff'"
-                  [count]="12">
-              </app-toolbar>
-
-              <div class="main-card">
-
-                <app-card></app-card>
-  
-                <app-card></app-card>
-  
-                <app-card></app-card>
-
-              </div>
-
-            </div>
-
-          </div>
+          <!-- <router-outlet></router-outlet> -->                  
+          <app-dashboard></app-dashboard>
 
       </mat-sidenav-content>
   
