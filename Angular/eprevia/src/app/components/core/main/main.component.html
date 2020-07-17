@@ -18,52 +18,79 @@
         class="sidenav-content"       
         [@onMainContentChange]="onSideNavChange ? 'open': 'close'">      
           <!-- CONTEUDO -->
-          <!-- <router-outlet></router-outlet> -->
+          <!-- <router-outlet></router-outlet> -->        
+
           <div fxLayout="row" fxLayout.xs="column">
-
-            <div class="content-card">
-
-              <app-toolbar 
-                    [title]="'Pendente'" 
-                    [iconLeft]="'assignment'">
-              </app-toolbar>
-              
-              <app-card></app-card>
-              
-              <span class="example-spacer"></span>
-
-            </div>
-
-            <div class="content-card">
+            
+            <div class="content-card" fxLayout="column">
 
               <app-toolbar 
                     [title]="'Em Andamento'" 
-                    [iconLeft]="'hourglass_full'">
+                    [iconLeft]="'query_builder'"
+                    [bgColor]="'#1dbd55'"
+                    [color]="'#fff'"
+                    [count]="141">
               </app-toolbar>
+              
+              <div class="main-card">
 
-              <app-card></app-card>
+                <app-card></app-card>
+  
+                <app-card></app-card>
+  
+                <app-card></app-card>
 
-              <span class="example-spacer"></span>
-
-              <app-card></app-card>
-
+              </div>
+              
 
             </div>
 
-            <div class="content-card">
+            <div class="content-card" fxLayout="column">
 
               <app-toolbar 
-                  [title]="'Concluído'" 
-                  [iconLeft]="'check_circle'">
+                    [title]="'Concluído'" 
+                    [iconLeft]="'assignment_turned_in'"
+                    [bgColor]="'#d63461'"
+                    [color]="'#fff'"
+                    [count]="26">
               </app-toolbar>
 
-              <app-card></app-card>
+              <div class="main-card">
 
+                <app-card></app-card>
+  
+                <app-card></app-card>
+  
+                <app-card></app-card>
+
+              </div>
+
+            </div>
+
+            <div class="content-card" fxLayout="column">
+
+              <app-toolbar 
+                  [title]="'Sincronizado'" 
+                  [iconLeft]="'autorenew'"
+                  [bgColor] = "'#5c67a5'"
+                  [color]="'#fff'"
+                  [count]="12">
+              </app-toolbar>
+
+              <div class="main-card">
+
+                <app-card></app-card>
+  
+                <app-card></app-card>
+  
+                <app-card></app-card>
+
+              </div>
 
             </div>
 
           </div>
-          
+
       </mat-sidenav-content>
   
     </mat-sidenav-container>

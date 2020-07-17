@@ -1,14 +1,14 @@
 <p>
-    <mat-toolbar>        
+    <mat-toolbar [style.background-color] = "bgColor" [style.color]="color">        
      <button *ngIf="iconRight" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
       <mat-icon>menu</mat-icon>
     </button>
     <span>{{ title }}</span>
     <span class="example-spacer"></span>
     <button *ngIf="iconLeft" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>
-          {{ iconLeft }}
-      </mat-icon>
+      <mat-icon [matBadge]="count">
+        {{ iconLeft }}
+      </mat-icon>      
     </button>    
   </mat-toolbar>
   </p>
