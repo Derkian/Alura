@@ -29,7 +29,7 @@
 
   .main-card{
     overflow-y: scroll; 
-    height: 450px;
+    height: calc(100vh - 156px);
   }
 
   .example-spacer{
