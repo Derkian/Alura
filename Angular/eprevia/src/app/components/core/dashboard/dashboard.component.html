@@ -1,83 +1,25 @@
 <div fxLayout="row" fxLayout.xs="column">
             
-    <div class="content-card" fxLayout="column">
+    <div *ngFor="let register of content" class="content-card" fxLayout="column">
 
-      <app-toolbar 
-            [title]="'Em Andamento'" 
-            [iconLeft]="'query_builder'"
-            [bgColor]="'#1dbd55'"
+      <app-toolbar
+            [title]="register.title" 
+            [iconLeft]="register.iconLeft"
+            [bgColor]="register.bgColor"
             [color]="'#fff'"
-            [count]="141">
+            [count]="register.totalRegister">
       </app-toolbar>
       
       <div class="main-card">
 
-        <perfect-scrollbar>
+        <perfect-scrollbar>          
 
           <app-card></app-card>
-  
-          <app-card></app-card>
-  
-          <app-card></app-card>
 
-        </perfect-scrollbar>
+        </perfect-scrollbar><!-- perfect-scrollbar -->
 
-      </div>
-      
+       </div><!-- main-card -->
 
-    </div>
+    </div><!-- content-card -->
 
-    <div class="content-card" fxLayout="column">
-
-      <app-toolbar 
-            [title]="'Concluído'" 
-            [iconLeft]="'assignment_turned_in'"
-            [bgColor]="'#d63461'"
-            [color]="'#fff'"
-            [count]="26">
-      </app-toolbar>
-
-      <div class="main-card">
-
-        <perfect-scrollbar>
-
-          <app-card></app-card>
-  
-          <app-card></app-card>
-  
-          <app-card></app-card>
-
-        </perfect-scrollbar>
-
-
-      </div>
-
-    </div>
-
-    <div class="content-card" fxLayout="column">
-
-      <app-toolbar 
-          [title]="'Sincronizado'" 
-          [iconLeft]="'autorenew'"
-          [bgColor] = "'#5c67a5'"
-          [color]="'#fff'"
-          [count]="12">
-      </app-toolbar>
-
-      <div class="main-card">
-
-        <perfect-scrollbar>
-
-          <app-card></app-card>
-  
-          <app-card></app-card>
-  
-          <app-card></app-card>
-
-        </perfect-scrollbar>
-
-      </div>
-
-    </div>
-
-  </div>
+  </div><!-- row  -->
