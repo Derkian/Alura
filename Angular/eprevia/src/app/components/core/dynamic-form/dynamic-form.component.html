@@ -4,9 +4,9 @@
       <div *ngFor="let item of elements" fxLayout="row">
         <app-element [element]="item" [form]="form"></app-element>
       </div>
-  
+
       <div fxLayout="row">
-        <button type="submit" [disabled]="!form.valid">Save</button>
+        <button mat-stroked-button type="submit" [disabled]="!form.valid">Save</button>        
       </div>
 
     </form>

@@ -1,16 +1,31 @@
 <div [formGroup]="form">
-    <label [attr.for]="element.key">{{element.label}}</label>
+
+  <div [ngSwitch]="element.controlType">
+
+    <mat-form-field *ngSwitchCase="'textbox'">
+      <mat-label>{{element.label}}</mat-label>
+      <input matInput placeholder="Input" 
+        [id]="element.key" [type]="element.type" [formControlName]="element.key">
+    </mat-form-field>    
+
+    <mat-form-field *ngSwitchCase="'dropdown'">
+      <mat-label>{{element.label}}</mat-label>
+      <mat-select [formControlName]="element.key">
+        <mat-option *ngFor="let opt of element.options" [value]="opt.value">
+          {{opt.value}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <label *ngSwitchCase="'radio'" class="example-radio-label">{{element.label}}</label>
+    <mat-radio-group *ngSwitchCase="'radio'" [formControlName]="element.key" class="example-radio-group">
+      <mat-radio-button class="example-radio-button" *ngFor="let opt of element.options" [value]="opt.value">
+        {{opt.value}}
+      </mat-radio-button>
+    </mat-radio-group>
+
+  </div> 
+
+  <div class="errorMessage" *ngIf="!isValid">{{element.label}} is required</div>
   
-    <div [ngSwitch]="element.controlType">
-  
-      <input *ngSwitchCase="'textbox'" [formControlName]="element.key"
-              [id]="element.key" [type]="element.type">
-  
-      <select [id]="element.key" *ngSwitchCase="'dropdown'" [formControlName]="element.key">
-        <option *ngFor="let opt of element.options" [value]="opt.key">{{opt.value}}</option>
-      </select>
-  
-    </div>
-  
-    <div class="errorMessage" *ngIf="!isValid">{{element.label}} is required</div>
-  </div>
+</div>
