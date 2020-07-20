@@ -1,10 +1,13 @@
 import {Component, Input} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
 
 import { MatSidenav } from '@angular/material/sidenav'
 
 import { SidenavService } from '../../../services/sidenav.service';
 import { onMainContentChange } from '../../../animations/amimation';
+
+import { ElementsServicesService  } from "../../../services/elements-services.service";
+import { ElementBase } from '../../../class/element-base';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-main',
@@ -14,22 +17,19 @@ import { onMainContentChange } from '../../../animations/amimation';
 })
 export class MainComponent {
   
-  @Input() leftSidenav: MatSidenav;
-  options: FormGroup;
-  name = 'Angular';
+  @Input() leftSidenav: MatSidenav;  
   public onSideNavChange: boolean;
+  elements: ElementBase<any>[];
 
-  constructor(fb: FormBuilder,
-              private _sidenavService: SidenavService) {    
-
-    this.options = fb.group({
-      bottom: 0,
-      fixed: false,
-      top: 0
-    });
+  constructor(private _sidenavService: SidenavService,
+              private _service : ElementsServicesService) {    
 
     this._sidenavService.sideNavState$.subscribe( res => {      
       this.onSideNavChange = res;
     })
+
+    this._service
+        .getElements()
+        .subscribe(ele => this.elements = ele);
   }
 }

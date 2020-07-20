@@ -1,0 +1,17 @@
+<div>
+    <form (ngSubmit)="onSubmit()" [formGroup]="form">
+  
+      <div *ngFor="let item of elements" fxLayout="row">
+        <app-element [element]="item" [form]="form"></app-element>
+      </div>
+  
+      <div fxLayout="row">
+        <button type="submit" [disabled]="!form.valid">Save</button>
+      </div>
+
+    </form>
+  
+    <div *ngIf="payLoad" class="form-row">
+      <strong>Saved the following values</strong><br>{{payLoad}}
+    </div>
+  </div>

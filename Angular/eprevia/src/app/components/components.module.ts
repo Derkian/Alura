@@ -23,7 +23,9 @@ import { LeftSideBarComponent } from './material/left-side-bar/left-side-bar.com
 import { CardComponent } from './material/card/card.component';
 import { ToolbarComponent } from './material/toolbar/toolbar.component';
 import { DashboardComponent } from './core/dashboard/dashboard.component';
+import { ElementComponent } from './core/element/element.component';
 import { ItemComponent } from './core/item/item.component';
+import { DynamicFormComponent } from './core/dynamic-form/dynamic-form.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -39,7 +41,9 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     CardComponent,
     ToolbarComponent,
     DashboardComponent,
-    ItemComponent
+    ItemComponent,    
+    DynamicFormComponent,
+    ElementComponent   
   ],
   imports: [
     CommonModule,     

@@ -18,7 +18,8 @@
         class="sidenav-content"       
         [@onMainContentChange]="onSideNavChange ? 'open': 'close'">      
           <!-- CONTEUDO -->
-          <router-outlet></router-outlet>          
+          <!-- <router-outlet></router-outlet>           -->
+          <app-dynamic-form [elements]="elements"></app-dynamic-form>
 
       </mat-sidenav-content>
   
