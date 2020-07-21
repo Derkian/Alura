@@ -1,7 +1,7 @@
-import { ElementBase } from './element-base';
+import { BaseElement } from './base-element';
 
 
-export class TextboxElement extends ElementBase<string> {
+export class TextboxElement extends BaseElement<string> {
     controlType = 'textbox';
     type : string;
 

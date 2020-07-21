@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input,  OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { ElementsServicesService  } from "../../../services/elements-services.service";
+import { BaseElement } from '../../../element-types/base-element';
 
 @Component({
   selector: 'app-item',
@@ -7,19 +10,16 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent implements OnInit {
-  isLinear = true;
-  firstFormGroup: FormGroup;
-  secondFormGroup: FormGroup;
+  isLinear = true;  
+  elements: BaseElement<any>[];
 
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(private _formBuilder: FormBuilder,
+              private _service : ElementsServicesService) { }
 
   ngOnInit(): void {
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
-    });
+    
+    this._service
+    .getElements()
+    .subscribe(ele => this.elements = ele);    
   }
-
 }

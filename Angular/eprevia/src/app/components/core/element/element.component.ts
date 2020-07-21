@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { FormGroup} from '@angular/forms';
 
-import { ElementBase } from '../../../class/element-base';
+import { BaseElement } from '../../../element-types/base-element';
 
 @Component({
   selector: 'app-element',
@@ -10,7 +10,7 @@ import { ElementBase } from '../../../class/element-base';
 })
 export class ElementComponent {
 
-  @Input() element : ElementBase<string>;
+  @Input() element : BaseElement<string>;
   @Input() form : FormGroup;
 
   constructor() {

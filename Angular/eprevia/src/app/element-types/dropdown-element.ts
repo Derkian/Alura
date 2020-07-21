@@ -1,6 +1,6 @@
-import { ElementBase } from './element-base';
+import { BaseElement } from './base-element';
 
-export class DropdownElement extends ElementBase<string> {
+export class DropdownElement extends BaseElement<string> {
     controlType = 'dropdown';
     options : {key : string , value : string} [] = [];
 

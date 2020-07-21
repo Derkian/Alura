@@ -1,7 +1,7 @@
 import { Component, Input,  OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
-import { ElementBase } from '../../../class/element-base';
+import { BaseElement } from '../../../element-types/base-element';
 import { FormControlServiceService  } from "../../../services/form-control-service.service";
 
 
@@ -12,7 +12,7 @@ import { FormControlServiceService  } from "../../../services/form-control-servi
 })
 export class DynamicFormComponent implements OnInit {
 
-  @Input() elements: ElementBase<string>[] = [];
+  @Input() elements: BaseElement<string>[] = [];
   form: FormGroup;
   payLoad = '';
 

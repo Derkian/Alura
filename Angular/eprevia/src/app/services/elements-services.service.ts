@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 
-import { ElementBase } from '../class/element-base';
-import { DropdownElement } from '../class/dropdown-element';
-import { TextboxElement } from '../class/textbox-element';
-import { RadioElement } from '../class/radio-element';
+import { BaseElement } from '../element-types/base-element';
+import { DropdownElement } from '../element-types/dropdown-element';
+import { TextboxElement } from '../element-types/textbox-element';
+import { RadioElement } from '../element-types/radio-element';
+import { CheckboxElement } from '../element-types/checkbox-element';
 
 import { of } from 'rxjs'
 
@@ -16,8 +17,8 @@ export class ElementsServicesService {
 
   getElements(){
 
-    let elements : ElementBase<string>[] = [
-      
+    let elements : BaseElement<string>[] = [
+            
       new DropdownElement({
         key: 'brave',
         label: 'Bravery Rating',        
@@ -46,13 +47,19 @@ export class ElementsServicesService {
       }),
 
       new RadioElement({
-        key: 'type',
+        key: 'jobType',
         label: 'Job Type',
         order: 4,                
         options: [
           {key: 'hero', value: 'Hero'},
           {key: 'sidekick', value: 'Sidekick'}
         ]
+      }),
+
+      new CheckboxElement({
+        key: 'enableWifi',
+        label: 'Enable Wifi',
+        order: 5,                          
       })
     ];    
 

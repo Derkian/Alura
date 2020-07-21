@@ -1,4 +1,4 @@
-export class ElementBase<T> {
+export class BaseElement<T> {
     
     value : T;
     key : string;
