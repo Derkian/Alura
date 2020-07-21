@@ -2,13 +2,35 @@
 
   <div [ngSwitch]="element.controlType">
 
-    <mat-form-field *ngSwitchCase="'textbox'">
+    <mat-form-field 
+      *ngSwitchCase="'textarea'"
+      class="field-element">
+      
       <mat-label>{{element.label}}</mat-label>
-      <input matInput placeholder="Input" 
-        [id]="element.key" [type]="element.type" [formControlName]="element.key">
+      <textarea matInput 
+          [id]="element.key" 
+          [type]="element.type" 
+          [formControlName]="element.key"
+          placeholder="Ex. 100 Main St">
+          1600 Amphitheatre Pkwy</textarea>
+    </mat-form-field>
+
+    <mat-form-field 
+        *ngSwitchCase="'textbox'"
+        class="field-element">
+      <mat-label>{{element.label}}</mat-label>
+
+      <input matInput 
+        placeholder="Input" 
+        [id]="element.key" 
+        [type]="element.type" 
+        [formControlName]="element.key">
+
     </mat-form-field>    
 
-    <mat-form-field *ngSwitchCase="'dropdown'">
+    <mat-form-field 
+      *ngSwitchCase="'dropdown'"
+      class="field-element">
       <mat-label>{{element.label}}</mat-label>
       <mat-select [formControlName]="element.key">
         <mat-option *ngFor="let opt of element.options" [value]="opt.value">

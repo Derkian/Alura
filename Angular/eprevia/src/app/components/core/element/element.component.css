@@ -22,3 +22,7 @@
     flex-direction: column;
     margin: 5px 0 10px 0;
   }
+
+  .field-element{
+    width: 80%;
+  }

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { BaseElement } from '../element-types/base-element';
 import { DropdownElement } from '../element-types/dropdown-element';
 import { TextboxElement } from '../element-types/textbox-element';
+import { TextAreaElement } from '../element-types/textarea-element';
 import { RadioElement } from '../element-types/radio-element';
 import { CheckboxElement } from '../element-types/checkbox-element';
 
@@ -66,6 +67,13 @@ export class ElementsServicesService {
         key: 'enableSMS',
         label: 'SMS',
         order: 6,                          
+      }),
+
+      new TextAreaElement({
+        key: 'observation',
+        label: 'Observation',
+        type: 'text',
+        order: 7
       }),
     ];    
 
