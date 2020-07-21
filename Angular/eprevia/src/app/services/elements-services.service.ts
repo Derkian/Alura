@@ -58,9 +58,15 @@ export class ElementsServicesService {
 
       new CheckboxElement({
         key: 'enableWifi',
-        label: 'Enable Wifi',
+        label: 'Wifi',
         order: 5,                          
-      })
+      }),
+
+      new CheckboxElement({
+        key: 'enableSMS',
+        label: 'SMS',
+        order: 6,                          
+      }),
     ];    
 
     return of(elements.sort((a, b) => a.order - b.order));

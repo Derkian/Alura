@@ -1,17 +1,33 @@
-<div class="dynamic-form">
-    <form (ngSubmit)="onSubmit()" [formGroup]="form">
-  
-      <div *ngFor="let item of elements" fxLayout="row">
-        <app-element [element]="item" [form]="form"></app-element>
-      </div>
+<div class="dynamic-form" fxLayout.xs="column" fxFlex fxLayout="row wrap">
 
-      <div fxLayout="row">
-        <button mat-stroked-button type="submit" [disabled]="!form.valid">Save</button>        
-      </div>
-
-    </form>
+    <form (ngSubmit)="onSubmit()" 
+          [formGroup]="form" 
+          fxFlex 
+          fxLayout="row wrap"
+          fxLayout.xs="column"> 
   
-    <div *ngIf="payLoad" class="form-row">
+      <div *ngFor="let item of elements" 
+            fxFlex.lg="calc(33%-25px)">          
+
+          <app-element 
+              [element]="item" 
+              [form]="form">
+          </app-element>        
+
+      </div>
+  
+      <div fxFlex="100">
+
+        <button mat-stroked-button 
+              type="submit" 
+              [disabled]="!form.valid">Save
+        </button>        
+      </div>  
+      
+    </form>  
+    
+    <div fxFlex="100" *ngIf="payLoad" class="form-row">
       <strong>Saved the following values</strong><br>{{payLoad}}
     </div>
+
   </div>
