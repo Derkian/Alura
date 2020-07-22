@@ -47,8 +47,10 @@
     </mat-radio-group>
 
     <label *ngSwitchCase="'checkbox'" class="example-checkbox-labe">{{element.label}}</label>
-    <mat-slide-toggle  *ngSwitchCase="'checkbox'"  class="example-checkbox-group" 
-                        [formControlName]="element.key" [value]="element.value">
+    <mat-slide-toggle  *ngSwitchCase="'checkbox'"                          
+                        class="example-checkbox-group" 
+                        [formControlName]="element.key" 
+                        [value]="element.value">
     </mat-slide-toggle>
 
   </div> 
