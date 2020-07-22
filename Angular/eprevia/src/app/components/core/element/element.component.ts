@@ -6,7 +6,7 @@ import { BaseElement } from '../../../element-types/base-element';
 @Component({
   selector: 'app-element',
   templateUrl: './element.component.html',
-  styleUrls: ['./element.component.css']
+  styleUrls: ['./element.component.scss']
 })
 export class ElementComponent {
 

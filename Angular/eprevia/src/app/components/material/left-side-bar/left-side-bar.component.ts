@@ -12,7 +12,7 @@ interface Page {
 @Component({
   selector: 'app-left-side-bar',
   templateUrl: './left-side-bar.component.html',
-  styleUrls: ['./left-side-bar.component.css'],
+  styleUrls: ['./left-side-bar.component.scss'],
   animations : [onSideNavChange, animateText]
 })
 
