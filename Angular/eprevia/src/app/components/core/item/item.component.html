@@ -1,13 +1,18 @@
-<nav mat-tab-nav-bar>
-    <a mat-tab-link>DADOS DO AVISO</a>
-    <a mat-tab-link>GALERIA DE IMAGENS</a>
-    <a mat-tab-link disabled [style.opacity]="100">
-        <mat-chip-list aria-label="Color selection">
-            <mat-chip [style.color]="'#fff'" [style.background-color]="'#1dbd55'">
-                Em Andamento
-            </mat-chip>
-        </mat-chip-list>            
-    </a>
-</nav>
+<mat-tab-group mat-align-tabs="start">
+    <mat-tab label="First">
+        <app-dynamic-form [elements]="elements"></app-dynamic-form>
+    </mat-tab>
+    <mat-tab label="Second">
+        <app-dynamic-form [elements]="elements"></app-dynamic-form>
+    </mat-tab>
+    <mat-tab disabled>
+        <ng-template mat-tab-label>
+            <mat-chip-list aria-label="Color selection">
+                <mat-chip [style.color]="'#fff'" [style.background-color]="'#1dbd55'">
+                    Em Andamento
+                </mat-chip>
+            </mat-chip-list>            
+        </ng-template>
+    </mat-tab>
+</mat-tab-group>
 
-<app-dynamic-form [elements]="elements"></app-dynamic-form>
