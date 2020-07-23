@@ -1,37 +1,22 @@
-<mat-card class="example-card">
-  <!-- <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+<mat-card *ngIf="data" class="example-card" >
   <mat-card-content>
     <div fxLayout="row wrap" fxLayoutAlign="space-between">
-      <div fxFlex="100">        
-        <p class="app-card-p">Veículo:</p>        
-        <p>Gol TRACK 1.0 Mi Total Flex 8V 4P</p>                  
+
+      <div *ngFor="let item of data.itens; first as isFirst" 
+           [fxFlex]="isFirst ? '100' :  '45'">        
+
+        <p class="app-card-p">{{item.title}}:</p>  
+        <p>{{item.description}}</p>                  
+        
       </div>
-      <div fxFlex="45">
-        <p class="app-card-p">Sinistro:</p>
-        <p>202007201520</p>                  
-      </div>
-      <div fxFlex="45">
-        <p class="app-card-p">Solicitação:</p>
-        <p>202007201520</p>
-      </div>      
-      <div fxFlex="45">
-        <p class="app-card-p">Cliente:</p>
-        <p>Kaué Maria Ryan Costa</p>                  
-      </div>
-      <div fxFlex="45">
-        <p class="app-card-p">Placa:</p>
-        <p>MQZ8653</p>
-      </div>            
+
     </div>        
   </mat-card-content>
   <mat-card-actions>
     <div fxLayout="row" fxLayoutAlign="end">
-      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <button mat-icon-button 
+          [matMenuTriggerFor]="menu" 
+          aria-label="Example icon-button with a menu">
           <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
@@ -49,6 +34,6 @@
         </button>
       </mat-menu>      
     </div>
-    </mat-card-actions>
+  </mat-card-actions>
 </mat-card>
 

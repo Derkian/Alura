@@ -1,20 +1,20 @@
 <div fxLayout="row" fxLayout.xs="column">
             
-    <div *ngFor="let register of content" class="content-card" fxLayout="column">
+    <div *ngFor="let dash of data" class="content-card" fxLayout="column">
 
       <app-toolbar
-            [title]="register.title" 
-            [iconLeft]="register.iconLeft"
-            [bgColor]="register.bgColor"
+            [title]="dash.title" 
+            [iconLeft]="dash.iconLeft"
+            [bgColor]="dash.bgColor"
             [color]="'#fff'"
-            [count]="register.totalRegister">
+            [count]="dash.totalRegister">
       </app-toolbar>
       
       <div class="main-card">
 
         <perfect-scrollbar>          
 
-          <app-card></app-card>
+          <app-card *ngFor="let card of dash.cards" [data] = "card"></app-card>
 
         </perfect-scrollbar><!-- perfect-scrollbar -->
 
