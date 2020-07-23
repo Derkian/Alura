@@ -1,6 +1,8 @@
 <div fxLayout="row" fxLayout.xs="column">
             
-    <div *ngFor="let dash of data" class="content-card" fxLayout="column">
+    <div *ngFor="let dash of data" 
+          class="content-card" 
+          fxFlex>
 
       <app-toolbar
             [title]="dash.title" 

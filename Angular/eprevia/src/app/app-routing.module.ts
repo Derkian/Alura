@@ -5,7 +5,7 @@ import { DashboardComponent  } from './components/core/dashboard/dashboard.compo
 import { WorkComponent   } from './components/core/work/work.component';
 
 const routes: Routes = [
-  { path : '', redirectTo : 'item', pathMatch : 'full' },
+  { path : '', redirectTo : 'dashboard', pathMatch : 'full' },
   { path : 'dashboard', component : DashboardComponent },
   { path : 'work', component : WorkComponent }  
 ];
