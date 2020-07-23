@@ -4,10 +4,11 @@
           [formGroup]="form" 
           fxFlex 
           fxLayout="row wrap"
-          fxLayout.xs="column"> 
+          fxLayout.xs="column"
+          fxLayoutAlign="space-between"> 
   
       <div *ngFor="let item of elements" 
-            fxFlex.lg="calc(33%-25px)">          
+            fxFlex.lg="30">          
 
           <app-element 
               [element]="item" 

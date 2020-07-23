@@ -61,12 +61,14 @@ export class ElementsServicesService {
         key: 'enableWifi',
         label: 'Wifi',
         order: 5,                          
+        value : true
       }),
 
       new CheckboxElement({
         key: 'enableSMS',
         label: 'SMS',
-        order: 6,                          
+        order: 6,    
+        value : false                      
       }),
 
       new TextAreaElement({
