@@ -23,7 +23,7 @@ export class LeftSideBarComponent implements OnInit {
 
   public pages: Page[] = [
     {name: 'Dashboard', link:'dashboard', icon: 'inbox'},
-    {name: 'Starred', link:'item', icon: 'star'}
+    {name: 'Starred', link:'work', icon: 'star'}
     // {name: 'Send email', link:'some-link', icon: 'send'},
   ]
 

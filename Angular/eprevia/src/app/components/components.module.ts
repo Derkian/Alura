@@ -24,8 +24,8 @@ import { CardComponent } from './material/card/card.component';
 import { ToolbarComponent } from './material/toolbar/toolbar.component';
 import { DashboardComponent } from './core/dashboard/dashboard.component';
 import { ElementComponent } from './core/element/element.component';
-import { ItemComponent } from './core/item/item.component';
 import { DynamicFormComponent } from './core/dynamic-form/dynamic-form.component';
+import { WorkComponent } from './core/work/work.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -40,10 +40,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     FooterComponent,
     CardComponent,
     ToolbarComponent,
-    DashboardComponent,
-    ItemComponent,    
+    DashboardComponent,    
     DynamicFormComponent,
-    ElementComponent   
+    ElementComponent,
+    WorkComponent   
   ],
   imports: [
     CommonModule,     
