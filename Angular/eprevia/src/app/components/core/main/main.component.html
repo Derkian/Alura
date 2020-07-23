@@ -4,7 +4,7 @@
     <app-header (toggled) = "leftSidenav.toggle();"></app-header>
   
     <mat-sidenav-container 
-        class="example-container">
+        class="example-container">       
 
       <mat-sidenav 
           #leftSidenav mode="side" opened 
@@ -17,8 +17,9 @@
       <mat-sidenav-content 
         class="sidenav-content"       
         [@onMainContentChange]="onSideNavChange ? 'open': 'close'">      
-          <!-- CONTEUDO -->
-          <router-outlet></router-outlet>                    
+
+          <!-- CONTEUDO -->          
+          <router-outlet></router-outlet>                              
 
       </mat-sidenav-content>
   

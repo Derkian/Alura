@@ -31,6 +31,13 @@ export class DashboardComponent implements OnInit {
           { title : 'Solicitação' , description : '202007221411' },
           { title : 'Cliente' , description : 'JOSÉ DA SILVA' },
           { title : 'Placa' , description : 'TRN0907' }
+        ]),
+        new CardData('1', [ 
+          { title : 'Veículo' , description : 'Gol TRACK 1.0 Mi Total Flex 8V 4p' },
+          { title : 'Sinistro' , description : '202007221411' },
+          { title : 'Solicitação' , description : '202007221411' },
+          { title : 'Cliente' , description : 'JOSÉ DA SILVA' },
+          { title : 'Placa' , description : 'TRN0907' }
         ])
       ]
     },

@@ -1,4 +1,4 @@
-@import '../../../../custom-theme.scss';
+@import '../../../css/vars.scss';
 
 .example-container {
     position: absolute;
@@ -12,10 +12,14 @@
     display: flex;
     align-items: center;
     justify-content: center;  
-    background-color: mat-color($eprevia-primary, lighter, 0.5);
+    background-color: transparentize($primary-color, 0.5);    
   }
   
   .sidenav-content{
     padding: 1rem;    
-    overflow: hidden;
+    overflow: hidden;    
+
+    @media #{$mq-mobile} {
+      overflow-y: scroll;      
+    }
   }
