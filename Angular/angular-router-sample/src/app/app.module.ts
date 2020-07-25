@@ -1,13 +1,17 @@
 import { NgModule }       from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
-import { AppComponent }     from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-import { HeroesModule }     from './heroes/heroes.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { CrisisListComponent }   from './crisis-list/crisis-list.component';
+import { AppComponent }     from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+
+import { HeroesModule }     from './heroes/heroes.module';
+import { CrisisCenterModule } from "./crisis-center/crisis-center.module";
+
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ComposeMessageComponent } from './compose-message/compose-message.component';
+
 
 @NgModule({
   imports: [
@@ -15,12 +19,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     FormsModule,  
     BrowserAnimationsModule,
     HeroesModule,
+    CrisisCenterModule,
     AppRoutingModule
   ],
   declarations: [
-    AppComponent,
-    CrisisListComponent,
-    PageNotFoundComponent
+    AppComponent,    
+    PageNotFoundComponent, ComposeMessageComponent,    
   ],
   bootstrap: [ AppComponent ]
 })
