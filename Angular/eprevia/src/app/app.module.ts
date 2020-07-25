@@ -14,7 +14,7 @@ import { SidenavService } from './services/sidenav.service';
   ],
   imports: [
     BrowserModule,    
-    BrowserAnimationsModule,        
+    BrowserAnimationsModule,
     ComponentsModule    
   ],
   providers: [ SidenavService ],  
