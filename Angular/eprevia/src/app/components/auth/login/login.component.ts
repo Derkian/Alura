@@ -1,5 +1,7 @@
-import { Input, Component, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { Component } from '@angular/core';
+
+import { LoginService } from '../../../services/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,18 +9,26 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  form: FormGroup = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl(''),
-  });
 
-  submit() {
-    if (this.form.valid) {
-      this.submitEM.emit(this.form.value);
-    }
+  user : string = ''
+  pwd : string  = ''
+
+  constructor(private loginService : LoginService, private router : Router){ }
+
+  ngOnInit(): void {
   }
-  @Input() error: string | null;
 
-  @Output() submitEM = new EventEmitter();
+  login(){
+    
+    this.loginService
+      .login()
+      .subscribe(() => {
 
+      if (this.loginService.isLoggedIn) {
+
+        this.router.navigate(['/main']);   
+      } 
+    });          
+
+  }
 }

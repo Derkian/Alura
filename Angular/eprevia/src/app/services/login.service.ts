@@ -14,8 +14,8 @@ export class LoginService {
   redirectUrl: string;
 
   login(): Observable<boolean> {
-    return of(true).pipe(
-      delay(1000),
+    
+    return of(true).pipe(      
       tap(val => this.isLoggedIn = true)
     );
   }
