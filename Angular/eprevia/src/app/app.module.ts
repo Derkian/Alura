@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule  } from "./app-routing.module";
 
 import { MainModule } from './components/main/main.module';
+import { AuthModule } from "./components/auth/auth.module";
 
 import { SidenavService } from './services/sidenav.service';
 
@@ -17,6 +18,7 @@ import { SidenavService } from './services/sidenav.service';
   imports: [
     BrowserModule,    
     BrowserAnimationsModule,
+    AuthModule,
     MainModule,
     AppRoutingModule
   ],

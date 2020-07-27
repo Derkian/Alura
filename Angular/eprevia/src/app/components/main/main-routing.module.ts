@@ -5,10 +5,13 @@ import { MainComponent  } from "./main/main.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { WorkComponent } from "./work/work.component";
 
+import { AuthGuard  } from "../auth/auth.guard";
+
 const routes: Routes = [
   {
     path : 'main',
     component : MainComponent,
+    canActivate : [AuthGuard],
     children : [
       { 
         path : '',
