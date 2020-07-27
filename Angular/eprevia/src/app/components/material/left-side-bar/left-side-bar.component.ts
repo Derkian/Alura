@@ -22,7 +22,7 @@ export class LeftSideBarComponent implements OnInit {
   public linkText: boolean = false;
 
   public pages: Page[] = [
-    {name: 'Dashboard', link:'dashboard', icon: 'inbox'},
+    {name: 'Dashboard', link:'', icon: 'inbox'},
     {name: 'Starred', link:'work', icon: 'star'}
     // {name: 'Send email', link:'some-link', icon: 'send'},
   ]

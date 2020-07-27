@@ -4,7 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { ComponentsModule } from './components/components.module';
+import { AppRoutingModule  } from "./app-routing.module";
+
+import { CoreModule } from './components/main/main.module';
 
 import { SidenavService } from './services/sidenav.service';
 
@@ -15,7 +17,8 @@ import { SidenavService } from './services/sidenav.service';
   imports: [
     BrowserModule,    
     BrowserAnimationsModule,
-    ComponentsModule    
+    CoreModule,
+    AppRoutingModule
   ],
   providers: [ SidenavService ],  
   bootstrap: [AppComponent]
