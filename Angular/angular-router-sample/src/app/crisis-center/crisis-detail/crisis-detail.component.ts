@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit, HostBinding } from '@angular/core';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
+import { Observable, from } from 'rxjs';
 
-import { Crisis } from "../crisis";
+import { Crisis }         from '../crisis';
+import { CrisisService } from '../crisis.service';
+import { DialogService }  from '../../dialog.service';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-crisis-detail',
@@ -9,21 +13,56 @@ import { Crisis } from "../crisis";
   styleUrls: ['./crisis-detail.component.css']
 })
 export class CrisisDetailComponent implements OnInit {
+  crisis: Crisis;
+  editName: string;
 
-  crisis: Crisis;  
-  editName : string;
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    public dialogService: DialogService,
+    public crisisService : CrisisService
+  ) {}
 
-  constructor(private route: ActivatedRoute,
-              private router: Router,) { }
-
-  ngOnInit(): void {
+  ngOnInit() {
+    this.route.data
+      .subscribe((data: { crisis: Crisis }) => {        
+        this.editName = data.crisis.name;
+        this.crisis = data.crisis;
+      });
   }
 
-  gotoCrises(){
-    // Relative navigation back to the crises
-    let crisisId = this.crisis.id;
+  cancel() {
+    this.gotoCrises();
+  }
 
+  save() {
+    this.crisis.name = this.editName;
+    this.gotoCrises();
+  }
+
+  canDeactivate(): Observable<boolean> | boolean {
+    // Allow synchronous navigation (`true`) if no crisis or the crisis is unchanged
+    if (!this.crisis || this.crisis.name === this.editName) {
+      return true;
+    }
+    // Otherwise ask the user with the dialog service and return its
+    // observable which resolves to true or false when the user decides
+    return this.dialogService.confirm('Discard changes?');
+  }
+
+  gotoCrises() {
+    let crisisId = this.crisis ? this.crisis.id : null;
+    // Pass along the crisis id if available
+    // so that the CrisisListComponent can select that crisis.
+    // Add a totally useless `foo` parameter for kicks.
+    // Relative navigation back to the crises
     this.router.navigate(['../', { id: crisisId, foo: 'foo' }], { relativeTo: this.route });
   }
-
 }
+
+
+/*
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
