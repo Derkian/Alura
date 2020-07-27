@@ -8,7 +8,7 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
-import { CoreRoutingModule } from './main-routing.module';
+import { MainRoutingModule } from './main-routing.module';
 //Flex Layout
 import { FlexLayoutModule } from '@angular/flex-layout';
 
@@ -49,7 +49,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    CoreRoutingModule,
+    MainRoutingModule,
   ],
   providers: [
     {
@@ -58,4 +58,4 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     }
   ]
 })
-export class CoreModule { }
+export class MainModule { }

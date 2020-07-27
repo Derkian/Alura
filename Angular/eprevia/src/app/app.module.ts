@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule  } from "./app-routing.module";
 
-import { CoreModule } from './components/main/main.module';
+import { MainModule } from './components/main/main.module';
 
 import { SidenavService } from './services/sidenav.service';
 
@@ -17,7 +17,7 @@ import { SidenavService } from './services/sidenav.service';
   imports: [
     BrowserModule,    
     BrowserAnimationsModule,
-    CoreModule,
+    MainModule,
     AppRoutingModule
   ],
   providers: [ SidenavService ],  
