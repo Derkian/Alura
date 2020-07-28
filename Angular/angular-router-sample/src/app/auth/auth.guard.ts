@@ -30,7 +30,7 @@ export class AuthGuard implements CanActivate {
   }
   
   checkLogin(url: string): true|UrlTree {
-    debugger;
+    
     if (this.authService.isLoggedIn) { return true; }
 
     // Store the attempted URL for redirecting

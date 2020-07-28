@@ -29,7 +29,7 @@ export class LoginComponent {
     this.loginService
       .login()
       .subscribe(() => {
-
+                
       if (this.loginService.isLoggedIn) {
 
         this.router.navigate(['/main']);   

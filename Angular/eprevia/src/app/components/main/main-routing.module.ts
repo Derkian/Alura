@@ -14,7 +14,8 @@ const routes: Routes = [
     canActivate : [AuthGuard],
     children : [
       {
-        path : '',                        
+        path : '',
+        canActivateChild : [AuthGuard],
         children : [
           { 
             path : '',
