@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { MaterialUiModule } from "../material-ui.module";
 
@@ -19,6 +20,7 @@ import { ToolbarComponent } from "./toolbar/toolbar.component";
   ],
   imports: [
     CommonModule,
+    RouterModule,
     MaterialUiModule
   ],
   exports : [
