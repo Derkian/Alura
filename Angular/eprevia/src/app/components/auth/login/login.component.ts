@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { Validators } from '@angular/forms';
 
 import { LoginService } from '../../../services/login.service';
 import { Router } from '@angular/router';
@@ -10,10 +12,14 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
 
-  user : string = ''
-  pwd : string  = ''
+  loginForm = this.fb.group({
+    user: ['', Validators.required],
+    pwd: ['', Validators.required],        
+  });
 
-  constructor(private loginService : LoginService, private router : Router){ }
+  constructor(private loginService : LoginService,
+              private router : Router,
+              private fb: FormBuilder){ }
 
   ngOnInit(): void {
   }
