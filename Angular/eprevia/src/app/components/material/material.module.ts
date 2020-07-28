@@ -8,6 +8,7 @@ import { CardComponent } from "./card/card.component";
 import { LeftSideBarComponent } from "./left-side-bar/left-side-bar.component";
 import { ProgressBarComponent } from "./progress-bar/progress-bar.component";
 import { ToolbarComponent } from "./toolbar/toolbar.component";
+import { SnackBarComponent } from './snack-bar/snack-bar.component';
 
 
 
@@ -16,7 +17,8 @@ import { ToolbarComponent } from "./toolbar/toolbar.component";
     CardComponent,
     LeftSideBarComponent,
     ProgressBarComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    SnackBarComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +29,8 @@ import { ToolbarComponent } from "./toolbar/toolbar.component";
     CardComponent,
     LeftSideBarComponent,
     ProgressBarComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    SnackBarComponent
   ]
 })
 export class MaterialModule { }
