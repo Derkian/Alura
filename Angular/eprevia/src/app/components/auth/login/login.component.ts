@@ -3,6 +3,7 @@ import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
 
 import { LoginService } from '../../../services/login.service';
+import { NotificationService } from '../../../services/notification.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -20,6 +21,7 @@ export class LoginComponent implements OnInit {
   });
 
   constructor(private loginService : LoginService,
+              private notificationService : NotificationService,
               private router : Router,
               private fb: FormBuilder){ }
 
@@ -36,6 +38,8 @@ export class LoginComponent implements OnInit {
       .subscribe(() => {
                 
       if (this.loginService.isLoggedIn) {
+
+        this.notificationService.showSucess('Login realizado com sucesso!');
 
         this.router.navigate(['/main']);   
       } 

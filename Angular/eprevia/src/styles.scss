@@ -2,3 +2,19 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.notification-sucess{
+    color: #fff;
+    font-weight: 500;
+    background-color: #4caf50;
+  }
+
+  .notification-error{
+    color: #fff;
+    font-weight: 500;
+    background-color: #f44336;
+  }
+
+  .mat-simple-snackbar-action.ng-star-inserted{
+      color : #000;
+  }

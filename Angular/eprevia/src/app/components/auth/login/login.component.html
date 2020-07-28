@@ -26,7 +26,10 @@
         
         <div fxFlexFill>
           
-          <app-progress-bar [mode]="'indeterminate'" [style.display]="isLoading ? 'block' : 'none'"></app-progress-bar>
+          <app-progress-bar 
+            [mode]="'indeterminate'" 
+            [style.display]="isLoading ? 'block' : 'none'">
+          </app-progress-bar>
           
           <button 
               mat-raised-button 

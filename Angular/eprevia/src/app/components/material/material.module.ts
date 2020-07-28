@@ -8,17 +8,13 @@ import { CardComponent } from "./card/card.component";
 import { LeftSideBarComponent } from "./left-side-bar/left-side-bar.component";
 import { ProgressBarComponent } from "./progress-bar/progress-bar.component";
 import { ToolbarComponent } from "./toolbar/toolbar.component";
-import { SnackBarComponent } from './snack-bar/snack-bar.component';
-
-
 
 @NgModule({
   declarations: [
     CardComponent,
     LeftSideBarComponent,
     ProgressBarComponent,
-    ToolbarComponent,
-    SnackBarComponent
+    ToolbarComponent    
   ],
   imports: [
     CommonModule,
@@ -29,8 +25,7 @@ import { SnackBarComponent } from './snack-bar/snack-bar.component';
     CardComponent,
     LeftSideBarComponent,
     ProgressBarComponent,
-    ToolbarComponent,
-    SnackBarComponent
+    ToolbarComponent    
   ]
 })
 export class MaterialModule { }
