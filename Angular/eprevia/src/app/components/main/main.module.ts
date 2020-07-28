@@ -12,14 +12,14 @@ import { MainRoutingModule } from './main-routing.module';
 //Flex Layout
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+//modules
+import { MaterialUiModule } from '../material-ui.module';
+import { MaterialModule } from "../material/material.module";
+
 //Components
-import { MaterialModule } from '../material.module';
 import { MainComponent } from './main/main.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { LeftSideBarComponent } from '../material/left-side-bar/left-side-bar.component';
-import { CardComponent } from '../material/card/card.component';
-import { ToolbarComponent } from '../material/toolbar/toolbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ElementComponent } from './element/element.component';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
@@ -30,13 +30,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 };
 
 @NgModule({
-  declarations: [
-    LeftSideBarComponent,
+  declarations: [    
     HeaderComponent,
     MainComponent,
-    FooterComponent,
-    CardComponent,
-    ToolbarComponent,
+    FooterComponent,    
     DashboardComponent,    
     DynamicFormComponent,
     ElementComponent,
@@ -46,6 +43,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     CommonModule,
     PerfectScrollbarModule,
     FlexLayoutModule,
+    MaterialUiModule,
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,

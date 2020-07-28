@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
 
@@ -10,7 +10,9 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
+
+  isLoading : boolean = false;
 
   loginForm = this.fb.group({
     user: ['', Validators.required],
@@ -22,10 +24,13 @@ export class LoginComponent {
               private fb: FormBuilder){ }
 
   ngOnInit(): void {
+    this.loginService.logout();
   }
 
   login(){
     
+    this.isLoading = true;
+
     this.loginService
       .login()
       .subscribe(() => {

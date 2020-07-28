@@ -41,6 +41,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
+import { ProgressBarComponent } from './material/progress-bar/progress-bar.component';
 
 @NgModule({
   exports: [
@@ -87,7 +88,8 @@ import {MatTreeModule} from '@angular/material/tree';
     MatTreeModule,
     PortalModule,
     ScrollingModule,
-  ]
+  ],
+  declarations: []
 })
 
-export class MaterialModule { }
+export class MaterialUiModule { }
