@@ -1,4 +1,10 @@
 .dynamic-form{
     margin-top: 10px;
     height: calc(100vh-150px);
+    padding: 0.45em 2em;
+
+    button {
+        width: 10em;
+        margin: 0 .23em;
+    }
 }

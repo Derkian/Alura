@@ -7,9 +7,8 @@
           fxLayout.xs="column"
           fxLayoutAlign="space-between"> 
   
-      <div *ngFor="let item of elements" 
-            fxFlex.lg="30">          
-
+      <div *ngFor="let item of elements" fxFlex.lg="31">          
+        
           <app-element 
               [element]="item" 
               [form]="form">
@@ -17,12 +16,18 @@
 
       </div>
   
-      <div fxFlex="100">
+      <div fxFlex="100" fxLayoutAlign="end">
 
         <button mat-raised-button
               type="submit" 
               color="primary"
-              [disabled]="!form.valid">Save
+              [disabled]="!form.valid">Enviar
+        </button>        
+
+        <button mat-raised-button
+              type="button" 
+              color="warn"
+              [disabled]="!form.valid">Cancelar
         </button>        
       </div>  
       

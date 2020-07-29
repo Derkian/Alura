@@ -16,8 +16,13 @@ export class LoginComponent implements OnInit {
   isLoading : boolean = false;
 
   loginForm = this.fb.group({
-    user: ['', Validators.required],
-    pwd: ['', Validators.required],        
+    user: ['', Validators.required ],
+    pwd: ['', 
+      [ 
+        Validators.required , 
+        Validators.minLength(8) 
+      ]
+    ],        
   });
 
   constructor(private loginService : LoginService,

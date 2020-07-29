@@ -11,11 +11,11 @@ const routes: Routes = [
   {
     path : 'main',
     component : MainComponent,
-    canActivate : [AuthGuard],
+    //canActivate : [AuthGuard],
     children : [
       {
         path : '',
-        canActivateChild : [AuthGuard],
+        //canActivateChild : [AuthGuard],
         children : [
           { 
             path : '',

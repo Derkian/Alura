@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 
 import { BaseElement } from '../../../element-types/base-element';
 import { FormControlServiceService  } from "../../../services/form-control-service.service";
+import { NotificationService  } from "../../../services/notification.service";
 
 
 @Component({
@@ -16,7 +17,8 @@ export class DynamicFormComponent implements OnInit {
   form: FormGroup;
   payLoad = '';
 
-  constructor(private qcs: FormControlServiceService) { 
+  constructor(private qcs: FormControlServiceService, 
+              private notificationService : NotificationService) { 
     
    }
 
@@ -25,6 +27,7 @@ export class DynamicFormComponent implements OnInit {
   }
 
   onSubmit() {
+    this.notificationService.showError('Salvo com sucesso!');    
     this.payLoad = JSON.stringify(this.form.getRawValue());
   }
 }
