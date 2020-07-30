@@ -24,6 +24,8 @@
         placeholder="Input" 
         [id]="element.key" 
         [type]="element.type" 
+        [mask] = "element.mask"
+        thousandSeparator="."        
         [formControlName]="element.key">
 
     </mat-form-field>    

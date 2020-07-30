@@ -8,6 +8,7 @@ export class BaseElement<T> {
     controlType : string;
     type : string;
     options : {key : string, value : string}[];
+    mask : string;
 
     constructor(options : {
         value?: T,
@@ -16,7 +17,8 @@ export class BaseElement<T> {
         required?: boolean,
         order?: number,
         controlType?: string,
-        type?: string
+        type?: string,
+        mask? : string
     } = {}){
 
         this.value = options.value;
@@ -26,5 +28,6 @@ export class BaseElement<T> {
         this.order = options.order === undefined ? 1 : options.order;
         this.controlType = options.controlType || '';
         this.type = options.type || '';
+        this.mask = options.mask || '';
     }
 }

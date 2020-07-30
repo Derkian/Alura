@@ -15,6 +15,7 @@ import { CheckboxElement } from '../element-types/checkbox-element';
 export interface itens {
   key : string,
   label : string
+  controlType : string
   type : string,
   order : number,
   required : boolean,
@@ -50,7 +51,7 @@ export class ElementsServicesService implements Resolve<BaseElement<string>[]> {
                         let elements : BaseElement<string>[] = [];
                         
                         item.forEach(element => {
-                          switch (element.type) {
+                          switch (element.controlType) {
                             case 'dropdown':
                               elements.push(new DropdownElement(element));   
                               break;
