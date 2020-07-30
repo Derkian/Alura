@@ -24,8 +24,7 @@
         placeholder="Input" 
         [id]="element.key" 
         [type]="element.type" 
-        [mask] = "element.mask"
-        thousandSeparator="."        
+        [mask] = "element.mask"        
         [formControlName]="element.key">
 
     </mat-form-field>    
@@ -57,6 +56,6 @@
 
   </div> 
 
-  <div class="errorMessage" *ngIf="!isValid">{{element.label}} is required</div>
+  <div class="errorMessage" *ngIf="!isValid">{{element.label}}</div>
   
 </div>
