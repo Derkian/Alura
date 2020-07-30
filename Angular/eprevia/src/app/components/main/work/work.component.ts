@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
-import { ElementsServicesService  } from "../../../services/elements-services.service";
 import { BaseElement } from '../../../element-types/base-element';
 
 @Component({
@@ -13,12 +13,13 @@ export class WorkComponent implements OnInit {
   isLinear = true;  
   elements: BaseElement<any>[];
 
-  constructor(private _service : ElementsServicesService) { }
+  constructor(private route : ActivatedRoute, private router : Router) { }
 
   ngOnInit(): void {
     
-    this._service
-    .getElements()
-    .subscribe(ele => this.elements = ele);    
+    this.route.data.subscribe((data : { elements : BaseElement<any>[] }) =>{
+      this.elements = data.elements;
+    } )
+    
   }
 }

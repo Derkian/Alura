@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { MainComponent  } from "./main/main.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { WorkComponent } from "./work/work.component";
+import { ElementsServicesService  } from "../../services/elements-services.service";
 
 import { AuthGuard  } from "../auth/auth.guard";
 
@@ -23,7 +24,10 @@ const routes: Routes = [
           },
           {
             path : 'work',
-            component : WorkComponent
+            component : WorkComponent,
+            resolve : {
+              elements : ElementsServicesService
+            }
           }
         ]        
       }

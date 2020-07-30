@@ -1,4 +1,8 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs'
+import { map } from 'rxjs/operators';
+import { Resolve, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 import { BaseElement } from '../element-types/base-element';
 import { DropdownElement } from '../element-types/dropdown-element';
@@ -7,79 +11,67 @@ import { TextAreaElement } from '../element-types/textarea-element';
 import { RadioElement } from '../element-types/radio-element';
 import { CheckboxElement } from '../element-types/checkbox-element';
 
-import { of } from 'rxjs'
+
+export interface itens {
+  key : string,
+  label : string
+  type : string,
+  order : number,
+  required : boolean,
+  value : any,
+  options : option[]  
+}
+
+export interface option {
+  key : string,
+  value : string
+}
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class ElementsServicesService {
+export class ElementsServicesService implements Resolve<BaseElement<string>[]> {
 
-  constructor() { }
+  constructor(private http : HttpClient, private router : Router) { }
+
+  resolve(route : ActivatedRouteSnapshot, state : RouterStateSnapshot) 
+        : Observable<BaseElement<string>[]> {
+    return this.getElements();
+  }
 
   getElements(){
 
-    let elements : BaseElement<string>[] = [
-            
-      new DropdownElement({
-        key: 'brave',
-        label: 'Bravery Rating',        
-        options: [
-          {key: 'solid',  value: 'Solid'},
-          {key: 'great',  value: 'Great'},
-          {key: 'good',   value: 'Good'},
-          {key: 'unproven', value: 'Unproven'}
-        ],
-        order: 3
-      }),
+    return this.http
+            .get<itens[]>('https://5f21fb8d0e9f660016d87d83.mockapi.io/item')
+            .pipe(
+                map(item => 
+                    {
+                        let elements : BaseElement<string>[] = [];
+                        
+                        item.forEach(element => {
+                          switch (element.type) {
+                            case 'dropdown':
+                              elements.push(new DropdownElement(element));   
+                              break;
+                            case 'textbox':
+                              elements.push(new TextboxElement(element));   
+                              break;
+                            case 'checkbox':
+                              elements.push(new CheckboxElement(element));   
+                              break;
+                            case 'textarea':
+                              elements.push(new TextAreaElement(element));   
+                              break;
+                            case 'radio':
+                              elements.push(new RadioElement(element));   
+                              break;
+                        }  
+                      });
 
-      new TextboxElement({
-        key: 'firstName',
-        label: 'First name',
-        value: 'Bombasto',
-        required: true,
-        order: 1
-      }),
-
-      new TextboxElement({
-        key: 'emailAddress',
-        label: 'Email',
-        type: 'email',
-        order: 2
-      }),
-
-      new RadioElement({
-        key: 'jobType',
-        label: 'Job Type',
-        order: 4,                
-        options: [
-          {key: 'hero', value: 'Hero'},
-          {key: 'sidekick', value: 'Sidekick'}
-        ]
-      }),
-
-      new CheckboxElement({
-        key: 'enableWifi',
-        label: 'Wifi',
-        order: 5,                          
-        value : true
-      }),
-
-      new CheckboxElement({
-        key: 'enableSMS',
-        label: 'SMS',
-        order: 6,    
-        value : false                      
-      }),
-
-      new TextAreaElement({
-        key: 'observation',
-        label: 'Observation',
-        type: 'text',
-        order: 7
-      }),
-    ];    
-
-    return of(elements.sort((a, b) => a.order - b.order));
-    
+                      return elements.sort((a, b) => a.order - b.order);
+                    }
+                )
+          );
   }
 }
