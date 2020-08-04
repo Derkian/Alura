@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs'
+import { Observable, config } from 'rxjs'
 import { map } from 'rxjs/operators';
 import { Resolve, Router, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+
+import { ConfigService } from '../config.service';
 
 import { BaseElement } from '../element-types/base-element';
 import { DropdownElement } from '../element-types/dropdown-element';
@@ -34,7 +36,9 @@ export interface option {
 })
 export class ElementsServicesService implements Resolve<BaseElement<string>[]> {
 
-  constructor(private http : HttpClient, private router : Router) { }
+  constructor(private http : HttpClient,
+              private router : Router,
+              private configuration : ConfigService) { }
 
   resolve(route : ActivatedRouteSnapshot, state : RouterStateSnapshot) 
         : Observable<BaseElement<string>[]> {
@@ -44,7 +48,7 @@ export class ElementsServicesService implements Resolve<BaseElement<string>[]> {
   getElements(){
 
     return this.http
-            .get<itens[]>('https://5f21fb8d0e9f660016d87d83.mockapi.io/item')
+            .get<itens[]>(`${this.configuration.app.baseUrl}/${this.configuration.app.element.list}`)
             .pipe(
                 map(item => 
                     {

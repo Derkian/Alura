@@ -27,7 +27,7 @@ export class DynamicFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.notificationService.showError('Salvo com sucesso!');    
+    this.notificationService.showSucess('Salvo com sucesso!');    
     this.payLoad = JSON.stringify(this.form.getRawValue());
   }
 }
