@@ -11,6 +11,7 @@ import { CardData } from './card-data';
 export class CardComponent implements OnInit {
 
   @Input() data : CardData[];
+  @Input() link : string;
 
   constructor() { }
 

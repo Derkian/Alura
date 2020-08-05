@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardData } from './dashboard-data';
 import { CardData } from '../../material/card/card-data';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,21 +19,21 @@ export class DashboardComponent implements OnInit {
       totalRegister : 141, 
       count : 3, 
       cards : [ 
-        new CardData('1', [ 
+        new CardData(1, [ 
           { title : 'Veículo' , description : 'Gol TRACK 1.0 Mi Total Flex 8V 4p' },
           { title : 'Sinistro' , description : '202007221411' },
           { title : 'Solicitação' , description : '202007221411' },
           { title : 'Cliente' , description : 'JOSÉ DA SILVA' },
           { title : 'Placa' , description : 'TRN0907' }
         ]),
-        new CardData('1', [ 
+        new CardData(2, [ 
           { title : 'Veículo' , description : 'Gol TRACK 1.0 Mi Total Flex 8V 4p' },
           { title : 'Sinistro' , description : '202007221411' },
           { title : 'Solicitação' , description : '202007221411' },
           { title : 'Cliente' , description : 'JOSÉ DA SILVA' },
           { title : 'Placa' , description : 'TRN0907' }
         ]),
-        new CardData('1', [ 
+        new CardData(3, [ 
           { title : 'Veículo' , description : 'Gol TRACK 1.0 Mi Total Flex 8V 4p' },
           { title : 'Sinistro' , description : '202007221411' },
           { title : 'Solicitação' , description : '202007221411' },
@@ -48,14 +49,14 @@ export class DashboardComponent implements OnInit {
       totalRegister : 26, 
       count : 10 , 
       cards : [ 
-        new CardData('1', [ 
+        new CardData(1, [ 
           { title : 'Veículo' , description : 'Gol TRACK 1.0 Mi Total Flex 8V 4p' },
           { title : 'Sinistro' , description : '202007221411' },
           { title : 'Solicitação' , description : '202007221411' },
           { title : 'Cliente' , description : 'JOSÉ DA SILVA' },
           { title : 'Placa' , description : 'TRN0907' }
         ]),
-        new CardData('1', [ 
+        new CardData(1, [ 
           { title : 'Veículo' , description : 'Gol TRACK 1.0 Mi Total Flex 8V 4p' },
           { title : 'Sinistro' , description : '202007221411' },
           { title : 'Solicitação' , description : '202007221411' },
@@ -71,35 +72,35 @@ export class DashboardComponent implements OnInit {
       totalRegister : 12, 
       count :5, 
       cards : [ 
-        new CardData('1', [ 
+        new CardData(1, [ 
           { title : 'Veículo' , description : 'Gol TRACK 1.0 Mi Total Flex 8V 4p' },
           { title : 'Sinistro' , description : '202007221411' },
           { title : 'Solicitação' , description : '202007221411' },
           { title : 'Cliente' , description : 'JOSÉ DA SILVA' },
           { title : 'Placa' , description : 'TRN0907' }
         ]),
-        new CardData('1', [ 
+        new CardData(1, [ 
           { title : 'Veículo' , description : 'Gol TRACK 1.0 Mi Total Flex 8V 4p' },
           { title : 'Sinistro' , description : '202007221411' },
           { title : 'Solicitação' , description : '202007221411' },
           { title : 'Cliente' , description : 'JOSÉ DA SILVA' },
           { title : 'Placa' , description : 'TRN0907' }
         ]),
-        new CardData('1', [ 
+        new CardData(1, [ 
           { title : 'Veículo' , description : 'Gol TRACK 1.0 Mi Total Flex 8V 4p' },
           { title : 'Sinistro' , description : '202007221411' },
           { title : 'Solicitação' , description : '202007221411' },
           { title : 'Cliente' , description : 'JOSÉ DA SILVA' },
           { title : 'Placa' , description : 'TRN0907' }
         ]),
-        new CardData('1', [ 
+        new CardData(1, [ 
           { title : 'Veículo' , description : 'Gol TRACK 1.0 Mi Total Flex 8V 4p' },
           { title : 'Sinistro' , description : '202007221411' },
           { title : 'Solicitação' , description : '202007221411' },
           { title : 'Cliente' , description : 'JOSÉ DA SILVA' },
           { title : 'Placa' , description : 'TRN0907' }
         ]),
-        new CardData('1', [ 
+        new CardData(1, [ 
           { title : 'Veículo' , description : 'Gol TRACK 1.0 Mi Total Flex 8V 4p' },
           { title : 'Sinistro' , description : '202007221411' },
           { title : 'Solicitação' , description : '202007221411' },
@@ -110,7 +111,7 @@ export class DashboardComponent implements OnInit {
     }    
   ];
 
-  constructor() { }
+  constructor(public router : Router) { }
 
   ngOnInit(): void {
   }

@@ -16,7 +16,7 @@
 
         <perfect-scrollbar>          
 
-          <app-card *ngFor="let card of dash.cards" [data] = "card"></app-card>
+          <app-card *ngFor="let card of dash.cards" [data] = "card" [link]="['work', card.id]"></app-card>          
 
         </perfect-scrollbar><!-- perfect-scrollbar -->
 

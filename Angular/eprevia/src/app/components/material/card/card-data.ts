@@ -1,9 +1,9 @@
 export class CardData{
-    title : string    
+    id : number    
     itens : CardItem[]
 
-    constructor(title : string, itens : CardItem[]){
-        this.title = title;
+    constructor(id : number, itens : CardItem[]){
+        this.id = id;
         this.itens = itens;
     }
 }
