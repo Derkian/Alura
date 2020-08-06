@@ -15,9 +15,13 @@
                       <mat-selection-list #shoes [multiple]="false">
                         <!-- <div mat-subheader>Basic Fields</div>
                         <mat-divider></mat-divider> -->
-                        <mat-list-option *ngFor="let shoe of typesOfShoes" [value]="shoe.type">
+                        <mat-list-option *ngFor="let shoe of typesOfShoes" 
+                            [value]="shoe.type" 
+                            (click)="router.navigate(['main','admin','field']);">
+                        
                             <mat-icon mat-list-icon>{{shoe.icon}}</mat-icon>
                             <div mat-line>{{shoe.type}}</div>
+                        
                         </mat-list-option>                
                       </mat-selection-list>                  
                     </mat-expansion-panel>        
@@ -43,9 +47,9 @@
                           </mat-panel-title>                    
                         </mat-expansion-panel-header>
                         <mat-selection-list #shoes [multiple]="false">                      
-                          <mat-list-option *ngFor="let shoe of typesOfShoes" [value]="shoe.type">
+                          <mat-list-option *ngFor="let shoe of typesOfShoes" [value]="shoe.type">                            
                               <mat-icon mat-list-icon>{{shoe.icon}}</mat-icon>
-                              <div mat-line>{{shoe.type}}</div>
+                              <div mat-line>{{shoe.type}}</div>                            
                           </mat-list-option>                
                         </mat-selection-list>                  
                     </mat-expansion-panel>          
@@ -62,6 +66,9 @@
 
 
     </div>
+    <div class="view-side-form">
+      <router-outlet></router-outlet>
+  </div>
 
   </div>
   

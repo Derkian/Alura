@@ -28,6 +28,7 @@ import { ElementComponent } from './element/element.component';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { WorkComponent } from './work/work.component';
 import { AdminComponent } from './admin/admin.component';
+import { FieldAddEditComponent } from './field-add-edit/field-add-edit.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -46,7 +47,8 @@ const maskConfig: Partial<IConfig> = {
     DynamicFormComponent,
     ElementComponent,
     WorkComponent,
-    AdminComponent   
+    AdminComponent,
+    FieldAddEditComponent   
   ],
   imports: [
     CommonModule,
