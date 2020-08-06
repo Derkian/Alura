@@ -27,6 +27,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ElementComponent } from './element/element.component';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { WorkComponent } from './work/work.component';
+import { AdminComponent } from './admin/admin.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -44,7 +45,8 @@ const maskConfig: Partial<IConfig> = {
     DashboardComponent,    
     DynamicFormComponent,
     ElementComponent,
-    WorkComponent   
+    WorkComponent,
+    AdminComponent   
   ],
   imports: [
     CommonModule,

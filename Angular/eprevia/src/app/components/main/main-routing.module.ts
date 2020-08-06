@@ -5,6 +5,7 @@ import { MainComponent  } from "./main/main.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { WorkComponent } from "./work/work.component";
 import { ElementsServicesService  } from "../../services/elements-services.service";
+import { AdminComponent } from './admin/admin.component';
 
 import { AuthGuard  } from "../auth/auth.guard";
 
@@ -12,11 +13,11 @@ const routes: Routes = [
   {
     path : 'main',
     component : MainComponent,
-    canActivate : [AuthGuard],
+    // canActivate : [AuthGuard],
     children : [
       {
         path : '',
-        canActivateChild : [AuthGuard],
+        // canActivateChild : [AuthGuard],
         children : [
           { 
             path : '',
@@ -28,6 +29,10 @@ const routes: Routes = [
             resolve : {
               elements : ElementsServicesService
             }
+          },
+          {
+            path : 'admin',
+            component : AdminComponent
           }
         ]        
       }

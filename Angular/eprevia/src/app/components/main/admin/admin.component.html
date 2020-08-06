@@ -1,0 +1,67 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="admin-conteiner">
+  
+    <div  fxFlex="20" class="admin-menu">
+        
+        <div class="basic-field" fxflex="100">
+            <perfect-scrollbar>
+
+                <mat-accordion>
+                    <mat-expansion-panel hideToggle [expanded]="'True'">
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Basic Fields
+                        </mat-panel-title>                      
+                      </mat-expansion-panel-header>
+                      <mat-selection-list #shoes [multiple]="false">
+                        <!-- <div mat-subheader>Basic Fields</div>
+                        <mat-divider></mat-divider> -->
+                        <mat-list-option *ngFor="let shoe of typesOfShoes" [value]="shoe.type">
+                            <mat-icon mat-list-icon>{{shoe.icon}}</mat-icon>
+                            <div mat-line>{{shoe.type}}</div>
+                        </mat-list-option>                
+                      </mat-selection-list>                  
+                    </mat-expansion-panel>        
+    
+                    <mat-expansion-panel hideToggle>
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                              Advanced Fields
+                          </mat-panel-title>                    
+                        </mat-expansion-panel-header>
+                        <mat-selection-list #shoes [multiple]="false">                      
+                          <mat-list-option *ngFor="let shoe of typesOfShoes" [value]="shoe.type">
+                              <mat-icon mat-list-icon>{{shoe.icon}}</mat-icon>
+                              <div mat-line>{{shoe.type}}</div>
+                          </mat-list-option>                
+                        </mat-selection-list>                  
+                    </mat-expansion-panel>                
+                    
+                    <mat-expansion-panel hideToggle>
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>
+                              Custom Fields
+                          </mat-panel-title>                    
+                        </mat-expansion-panel-header>
+                        <mat-selection-list #shoes [multiple]="false">                      
+                          <mat-list-option *ngFor="let shoe of typesOfShoes" [value]="shoe.type">
+                              <mat-icon mat-list-icon>{{shoe.icon}}</mat-icon>
+                              <div mat-line>{{shoe.type}}</div>
+                          </mat-list-option>                
+                        </mat-selection-list>                  
+                    </mat-expansion-panel>          
+                    
+                </mat-accordion>
+
+            </perfect-scrollbar>
+
+        </div>
+
+    </div>
+  
+    <div fxFlex="80" class="admin-content">
+
+
+    </div>
+
+  </div>
+  
