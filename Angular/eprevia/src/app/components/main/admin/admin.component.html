@@ -13,8 +13,7 @@
                         </mat-panel-title>                      
                       </mat-expansion-panel-header>
                       <mat-selection-list #shoes [multiple]="false">
-                        <!-- <div mat-subheader>Basic Fields</div>
-                        <mat-divider></mat-divider> -->
+                        
                         <mat-list-option *ngFor="let shoe of typesOfShoes" 
                             [value]="shoe.type" 
                             (click)="router.navigate(['main','admin','field']);">
@@ -23,6 +22,7 @@
                             <div mat-line>{{shoe.type}}</div>
                         
                         </mat-list-option>                
+
                       </mat-selection-list>                  
                     </mat-expansion-panel>        
     
@@ -38,21 +38,7 @@
                               <div mat-line>{{shoe.type}}</div>
                           </mat-list-option>                
                         </mat-selection-list>                  
-                    </mat-expansion-panel>                
-                    
-                    <mat-expansion-panel hideToggle>
-                        <mat-expansion-panel-header>
-                          <mat-panel-title>
-                              Custom Fields
-                          </mat-panel-title>                    
-                        </mat-expansion-panel-header>
-                        <mat-selection-list #shoes [multiple]="false">                      
-                          <mat-list-option *ngFor="let shoe of typesOfShoes" [value]="shoe.type">                            
-                              <mat-icon mat-list-icon>{{shoe.icon}}</mat-icon>
-                              <div mat-line>{{shoe.type}}</div>                            
-                          </mat-list-option>                
-                        </mat-selection-list>                  
-                    </mat-expansion-panel>          
+                    </mat-expansion-panel>
                     
                 </mat-accordion>
 

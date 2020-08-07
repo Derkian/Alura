@@ -3,11 +3,39 @@
     z-index: 100;
     top: 64px;
     right: 0;
-    width: 40%;
-    height: 100%;
+    width: 30%;
+    height: 100vh;
     overflow: auto;
     background: #fff;
     padding: 20px;
     border-left: 1px solid #e0e0e0;
     border-radius: 20px 0 0px;
 }
+
+section {
+    display: table;
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;    
+  }
+  
+  .example-button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;    
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;    
+  }

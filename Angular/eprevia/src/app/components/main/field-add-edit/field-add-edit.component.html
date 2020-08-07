@@ -1,11 +1,67 @@
 <div class="side-form">
-    <div class="example-container">
-        <mat-form-field appearance="fill">
-          <mat-label>Enter your email</mat-label>
-          <input matInput placeholder="pat@example.com"  required>
-          <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
-        </mat-form-field>
-    </div>
-    <button class="btn btn-primary">Save</button>
-    <a class="btn btn-default" [routerLink]="['/','main','admin']">Cancel</a>    
+    <app-toolbar [title]="'Field'"></app-toolbar>
+    
+    <form [formGroup]="fieldForm">
+
+      <div fxLayout="row wrap">
+
+        <div fxFlex="50">
+
+          <mat-form-field appearance="fill" >
+            <mat-label>Label</mat-label>
+            <input matInput formControlName="label"  required>        
+          </mat-form-field>
+
+        </div>
+
+        <div fxFlex="50">  
+
+          <mat-form-field appearance="fill">
+            <mat-label>Key</mat-label>
+            <input matInput formControlName="key"  required>        
+          </mat-form-field>
+
+        </div>
+
+        <div fxFlex="50">
+
+          <mat-slide-toggle formControlName="Required">Required</mat-slide-toggle>
+
+        </div>
+
+        <div fxFlex="100" fxLayoutAlign="end">
+
+          <div class="example-button-row">
+            <div class="example-flex-container">
+              <div class="example-button-container">
+                <button mat-fab color="primary" aria-label="Example icon button with a add icon">
+                  <mat-icon>add_circle</mat-icon>
+                </button>
+              </div>
+
+              <div class="example-flex-container">
+                <div class="example-button-container">
+                  <a mat-fab color="warn"                     
+                    [routerLink]="['/','main','admin']">
+                    <mat-icon>settings_backup_restore</mat-icon>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+            
+          </div>
+
+          <!-- <button class="btn btn-primary">Save</button>
+          
+          <a class="btn btn-default" [routerLink]="['/','main','admin']">Cancel</a>     -->
+
+        </div>
+
+      </div>
+
+    </form>
+    
+    
 </div>
