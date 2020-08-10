@@ -15,7 +15,8 @@ export class FieldAddEditComponent implements OnInit {
   fieldForm = new FormGroup({
     label : new FormControl(''),
     key : new FormControl(''),
-    Required : new FormControl()
+    Required : new FormControl(''),
+    order : new FormControl('')
   });
 
   constructor(public router : Router) { }

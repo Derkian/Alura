@@ -23,11 +23,22 @@
 
         </div>
 
-        <div fxFlex="50">
+        <div fxFlex="50">  
+
+          <mat-form-field appearance="fill">
+            <mat-label>Order</mat-label>
+            <input matInput formControlName="order"  required>        
+          </mat-form-field>
+
+        </div>
+
+        <div fxFlex="100">
 
           <mat-slide-toggle formControlName="Required">Required</mat-slide-toggle>
 
         </div>
+
+
 
         <div fxFlex="100" fxLayoutAlign="end">
 
@@ -49,7 +60,6 @@
               </div>
 
             </div>
-
             
           </div>
 
