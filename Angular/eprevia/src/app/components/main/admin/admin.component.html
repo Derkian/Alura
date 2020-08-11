@@ -25,21 +25,7 @@
 
                       </mat-selection-list>                  
                     </mat-expansion-panel>        
-    
-                    <!-- <mat-expansion-panel hideToggle>
-                        <mat-expansion-panel-header>
-                          <mat-panel-title>
-                              Advanced Fields
-                          </mat-panel-title>                    
-                        </mat-expansion-panel-header>
-                        <mat-selection-list #shoes [multiple]="false">                      
-                          <mat-list-option *ngFor="let shoe of typesOfShoes" [value]="shoe.type">
-                              <mat-icon mat-list-icon>{{shoe.icon}}</mat-icon>
-                              <div mat-line>{{shoe.type}}</div>
-                          </mat-list-option>                
-                        </mat-selection-list>                  
-                    </mat-expansion-panel> -->
-                    
+
                 </mat-accordion>
 
             </perfect-scrollbar>
@@ -53,17 +39,22 @@
       <perfect-scrollbar>
 
         <mat-selection-list #elementSelected [multiple]="false" class="admin-element">
+
+          <form [formGroup]="form" >
   
-            <mat-list-option *ngFor="let form of formElements" [value]="form">
-  
-              {{form.type}}
-              
-              <div class="example-button-row" *ngIf="elementSelected.selectedOptions.selected[0]?.value.type == form.type">
-                <div class="example-flex-container">
-                  <div class="example-button-container">
-                    <button mat-mini-fab color="primary" 
-                        aria-label="Example icon button with a settings icon"
-                        (click)="router.navigate(['main','admin','field']);">
+            <mat-list-option *ngFor="let formElement of formElements" [value]="formElement">  
+                     
+                <app-element 
+                    [element]="formElement" 
+                    [form]="form">
+                </app-element> 
+                
+                <div class="example-button-row" *ngIf="elementSelected.selectedOptions.selected[0]?.value.controlType == formElement.controlType">
+                  <div class="example-flex-container">
+                    <div class="example-button-container">
+                      <button mat-mini-fab color="primary" 
+                      aria-label="Example icon button with a settings icon"
+                      (click)="router.navigate(['main','admin','field']);">
                       <mat-icon>settings</mat-icon>
                     </button>
                   </div>              
@@ -75,6 +66,8 @@
                 </div>
               </div>
             </mat-list-option>
+
+          </form>
   
         </mat-selection-list>
 
