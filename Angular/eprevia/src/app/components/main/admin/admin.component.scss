@@ -5,22 +5,23 @@
 
 .admin-content{    
     height: 100vh;
+
+    .mat-list-item{
+        height: 8em;
+    }
 }
 
 .field-content{
     margin: 1rem 0;
 }
 
-// .field {
-//     border-left: .5em solid rgb(0 0 0 / 24%);
-//     padding: 0 0 0 .5em;
-//     background-color: #fff;
-//     box-sizing: initial !important;
-//     height: 2.5em;
-//     margin-bottom: .7em;
-//     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.5);
+.admin-element{
+    width: 500px;
+}
 
-//     .mat-icon{
-//         margin-right: .2em;
-//     }
-// }
+.example-button-row{
+    top: 21px;
+    
+    position: absolute;
+    right: -45px;
+}

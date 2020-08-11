@@ -1,4 +1,4 @@
-<div fxLayout="row" fxLayoutAlign="center center" class="admin-conteiner">
+<div fxLayout="row" fxLayoutAlign="start center" class="admin-conteiner">
   
     <div  fxFlex="20" class="admin-menu">
         
@@ -12,21 +12,21 @@
                             Basic Fields
                         </mat-panel-title>                      
                       </mat-expansion-panel-header>
-                      <mat-selection-list #shoes [multiple]="false">
+                      <mat-selection-list #elements [multiple]="false">
                         
-                        <mat-list-option *ngFor="let shoe of typesOfShoes" 
-                            [value]="shoe.type" 
-                            (click)="router.navigate(['main','admin','field']);">
+                        <mat-list-option *ngFor="let element of typeOfElements" 
+                            [value]="element.type" 
+                            (click)="addNewElement(element.type)">
                         
-                            <mat-icon mat-list-icon>{{shoe.icon}}</mat-icon>
-                            <div mat-line>{{shoe.type}}</div>
+                            <mat-icon mat-list-icon>{{element.icon}}</mat-icon>
+                            <div mat-line>{{element.type}}</div>
                         
                         </mat-list-option>                
 
                       </mat-selection-list>                  
                     </mat-expansion-panel>        
     
-                    <mat-expansion-panel hideToggle>
+                    <!-- <mat-expansion-panel hideToggle>
                         <mat-expansion-panel-header>
                           <mat-panel-title>
                               Advanced Fields
@@ -38,7 +38,7 @@
                               <div mat-line>{{shoe.type}}</div>
                           </mat-list-option>                
                         </mat-selection-list>                  
-                    </mat-expansion-panel>
+                    </mat-expansion-panel> -->
                     
                 </mat-accordion>
 
@@ -48,13 +48,43 @@
 
     </div>
   
-    <div fxFlex="80" class="admin-content">
+    <div fxFlex="50" class="admin-content">
 
+      <perfect-scrollbar>
 
+        <mat-selection-list #elementSelected [multiple]="false" class="admin-element">
+  
+            <mat-list-option *ngFor="let form of formElements" [value]="form">
+  
+              {{form.type}}
+              
+              <div class="example-button-row" *ngIf="elementSelected.selectedOptions.selected[0]?.value.type == form.type">
+                <div class="example-flex-container">
+                  <div class="example-button-container">
+                    <button mat-mini-fab color="primary" 
+                        aria-label="Example icon button with a settings icon"
+                        (click)="router.navigate(['main','admin','field']);">
+                      <mat-icon>settings</mat-icon>
+                    </button>
+                  </div>              
+                  <div class="example-button-container">
+                    <button mat-mini-fab color="warn" aria-label="Example icon button with a delete icon">
+                      <mat-icon>delete</mat-icon>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </mat-list-option>
+  
+        </mat-selection-list>
+
+      </perfect-scrollbar>
+      
     </div>
+
     <div class="view-side-form">
       <router-outlet></router-outlet>
-  </div>
+    </div>
 
   </div>
   
