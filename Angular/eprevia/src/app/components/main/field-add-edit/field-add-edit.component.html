@@ -9,7 +9,7 @@
 
           <mat-form-field appearance="fill" >
             <mat-label>Label</mat-label>
-            <input matInput formControlName="label"  required>        
+            <input matInput formControlName="label" [(ngModel)]="item.options.label" required>        
           </mat-form-field>
 
         </div>
@@ -18,7 +18,7 @@
 
           <mat-form-field appearance="fill">
             <mat-label>Key</mat-label>
-            <input matInput formControlName="key"  required>        
+            <input matInput formControlName="key" [(ngModel)]="item.options.key"  required>        
           </mat-form-field>
 
         </div>
@@ -27,14 +27,14 @@
 
           <mat-form-field appearance="fill">
             <mat-label>Order</mat-label>
-            <input matInput formControlName="order"  required>        
+            <input matInput formControlName="order" [(ngModel)]="item.options.order" required>        
           </mat-form-field>
 
         </div>
 
         <div fxFlex="100">
 
-          <mat-slide-toggle formControlName="Required">Required</mat-slide-toggle>
+          <mat-slide-toggle formControlName="Required" [(ngModel)]="item.options.required"> Required</mat-slide-toggle>
 
         </div>
 
@@ -45,7 +45,7 @@
           <div class="example-button-row">
             <div class="example-flex-container">
               <div class="example-button-container">
-                <button mat-fab color="primary" aria-label="Example icon button with a add icon">
+                <button mat-fab color="primary" aria-label="Example icon button with a add icon" (click)="changeOptions()">
                   <mat-icon>add_circle</mat-icon>
                 </button>
               </div>

@@ -36,7 +36,7 @@ const routes: Routes = [
             component : AdminComponent,
             children : [
               {
-                path : 'field',
+                path : 'field/:id',
                 component: FieldAddEditComponent
               }
             ]

@@ -36,6 +36,20 @@ export interface option {
 })
 export class ElementsServicesService implements Resolve<BaseElement<string>[]> {
 
+  public formElements : { 
+    id : number,     
+    options : {      
+      key?: string,
+      label?: string,
+      required?: boolean,
+      order?: number,
+      controlType?: string,
+      type?: string,
+      mask? : string
+    },
+    element : BaseElement<string> 
+  }[] = [];
+
   constructor(private http : HttpClient,
               private router : Router,
               private configuration : ConfigService) { }
@@ -43,6 +57,105 @@ export class ElementsServicesService implements Resolve<BaseElement<string>[]> {
   resolve(route : ActivatedRouteSnapshot, state : RouterStateSnapshot) 
         : Observable<BaseElement<string>[]> {
     return this.getElements();
+  }
+
+
+  generateElement(controlType: string, options : any) : BaseElement<string> {
+
+    switch (controlType) {
+      case 'radio':
+
+        return new RadioElement(options);
+
+        break;
+      case 'checkbox':        
+        return new CheckboxElement(options);
+
+        break;
+      case 'textarea':
+        return new TextAreaElement(options);
+
+        break;
+      case 'dropdown':
+        return new DropdownElement(options);        
+        break;      
+    }
+
+  }
+
+  createElement(controlType : string){
+
+    let item;
+
+    debugger;
+
+    switch (controlType) {
+      case 'radio':
+
+        item = { 
+          id : (this.formElements.length + 1), 
+          options : { 
+            label : 'Radio' ,  
+            options : [  
+              { key : 'Sim', value : 'Sim' },
+              { Key : 'Não', value : 'Não' } 
+            ] 
+          }          
+        };
+
+        break;
+      case 'checkbox':
+
+        item = { 
+          id : (this.formElements.length + 1), 
+          options : { 
+            label : 'Toggle'
+          },
+        };
+
+        break;
+      case 'textarea':
+
+        item = { 
+          id : (this.formElements.length + 1), 
+          options : { 
+            label : 'TextArea'
+          },
+        };
+
+        break;
+      case 'dropdown':
+
+        item = { 
+          id : (this.formElements.length + 1), 
+          options : {
+            label : 'DropDown',
+            options : [  
+              { key : '1', value : 'Opção 1' },
+              { key : '2', value : 'Opção 2' } ] 
+          },
+        };
+        break;      
+    }    
+
+    item.element = this.generateElement(controlType, item.options);
+
+    this.formElements.push(item);
+  }
+
+  finFormElement(id : number) : any{
+    return this.formElements.find(item => item.id == id);
+  }
+
+  updateFormElement(id : number, options : any) : void{
+
+    debugger;
+
+    let item = this.formElements.find(index => index.id == id);
+
+    item.options = options;
+    
+    item.element = this.generateElement(item.element.controlType, options);
   }
 
   getElements(){
