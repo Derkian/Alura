@@ -23,12 +23,12 @@ import { MaterialModule } from "../material/material.module";
 import { MainComponent } from './main/main.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ElementComponent } from './element/element.component';
-import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
-import { WorkComponent } from './work/work.component';
-import { AdminComponent } from './admin/admin.component';
-import { FieldAddEditComponent } from './field-add-edit/field-add-edit.component';
+import { DashboardComponent } from './subpages/dashboard/dashboard.component';
+import { ElementComponent } from './subpages/work/subpages/element/element.component';
+import { DynamicFormComponent } from './subpages/work/subpages/dynamic-form/dynamic-form.component';
+import { WorkComponent } from './subpages/work/work.component';
+import { AdminComponent } from './subpages/admin/admin.component';
+import { FieldAddEditComponent } from './subpages/admin/subpages/field-add-edit/field-add-edit.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true

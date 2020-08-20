@@ -1,4 +1,4 @@
-import { CardData } from '../../material/card/card-data';
+import { CardData } from '../../../material/card/card-data';
 
 export interface DashboardData {
     title: string,

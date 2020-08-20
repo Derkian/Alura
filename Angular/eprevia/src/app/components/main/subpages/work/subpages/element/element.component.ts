@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { FormGroup} from '@angular/forms';
 
-import { BaseElement } from '../../../element-types/base-element';
+import { BaseElement } from '../../../../../../element-types/base-element';
 
 @Component({
   selector: 'app-element',

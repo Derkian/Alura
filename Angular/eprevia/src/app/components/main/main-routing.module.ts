@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { MainComponent  } from "./main/main.component";
-import { DashboardComponent } from "./dashboard/dashboard.component";
-import { WorkComponent } from "./work/work.component";
+import { DashboardComponent  } from "./subpages/dashboard/dashboard.component";
+import { WorkComponent } from "./subpages/work/work.component";
 import { ElementsServicesService  } from "../../services/elements-services.service";
-import { AdminComponent } from './admin/admin.component';
-import { FieldAddEditComponent  } from "./field-add-edit/field-add-edit.component";
+import { AdminComponent } from './subpages/admin/admin.component';
+import { FieldAddEditComponent  } from "./subpages/admin/subpages/field-add-edit/field-add-edit.component";
 
 import { AuthGuard  } from "../auth/auth.guard";
 

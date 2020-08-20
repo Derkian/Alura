@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { slideInOutAnimation  } from "../../../animations/slide-in-out.animation";;
+import { slideInOutAnimation  } from "../../../../../../animations/slide-in-out.animation";;
 import { FormGroup, FormControl  } from "@angular/forms";
 import { Router, ActivatedRoute } from "@angular/router";
 import { ElementsServicesService } from 'src/app/services/elements-services.service';

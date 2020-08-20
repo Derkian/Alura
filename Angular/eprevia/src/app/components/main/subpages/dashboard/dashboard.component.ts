@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardData } from './dashboard-data';
-import { CardData } from '../../material/card/card-data';
+import { CardData } from '../../../material/card/card-data';
 import { Router } from '@angular/router';
 
 @Component({

@@ -2,7 +2,8 @@
             
     <div *ngFor="let dash of data" 
           class="content-card" 
-          fxFlex>
+          fxFlex
+    >
 
       <app-toolbar
             [title]="dash.title" 
@@ -16,12 +17,17 @@
 
         <perfect-scrollbar>          
 
-          <app-card *ngFor="let card of dash.cards" [data] = "card" [link]="['work', card.id]"></app-card>          
+          <app-card 
+            *ngFor="let card of dash.cards" 
+            [data] = "card" 
+            [link]="['work', card.id]"
+          >
+          </app-card>          
 
         </perfect-scrollbar><!-- perfect-scrollbar -->
 
        </div><!-- main-card -->
 
     </div><!-- content-card -->
-
+        
   </div><!-- row  -->

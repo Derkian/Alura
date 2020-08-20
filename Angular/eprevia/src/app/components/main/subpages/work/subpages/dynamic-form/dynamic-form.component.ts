@@ -1,9 +1,9 @@
 import { Component, Input,  OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
-import { BaseElement } from '../../../element-types/base-element';
-import { FormControlServiceService  } from "../../../services/form-control-service.service";
-import { NotificationService  } from "../../../services/notification.service";
+import { BaseElement } from '../../../../../../element-types/base-element';
+import { FormControlServiceService  } from "../../../../../../services/form-control-service.service";
+import { NotificationService  } from "../../../../../../services/notification.service";
 
 
 @Component({
